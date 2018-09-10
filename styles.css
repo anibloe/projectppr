@@ -1,0 +1,23 @@
+header {
+	font-weight: bold;
+}
+
+section {
+	padding-bottom: 100px;
+}
+
+#strapline span {
+	text-decoration: underline;
+}
+	
+#what-i-offer span {
+	font-style: italic;
+}
+
+.faq-q {
+	
+}
+
+.faq-a {
+	
+}
