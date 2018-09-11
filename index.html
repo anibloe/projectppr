@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="./fa/css/all.css"/>
 		<!-- scripts -->
 		<script src="./bs/bootstrap.bundle.min.js"></script>
+		<script src="./jquery-3.3.1.min.js"></script>
 	</head>
 	
 	<body>
@@ -68,7 +69,7 @@
 					<li>I will give you clear and concise analysis, using objectivity and care, for projects on the scale of your choosing </li>
 					<li>I’m a self-employed freelancer, independent and not out to get rich - just to do right by organizations working hard for those in need</li>
 					<li>I work exclusively with philanthropic organizations and understand the distinct challenges facing the nonprofit sector</li>
-					<li>I frequently share current and past clients social media updates on my own channels, . Iincreasing exposure to a wide range of interested people.</li>
+					<li>I frequently share current and past clients social media updates on my own channels, increasing exposure to a wide range of nonprofit professionals.</li>
 
 					<p>Check out About Me for more information on my background</p>
 				</ul>
@@ -159,6 +160,131 @@
 			
 			<section id="contact">
 				<header>Contact Form</header>
+				
+				<form action="https://www.enformed.io/nhsvnvt7" method="POST" name="contact" id="contact-form">
+					<div class="form-group">
+						<label for="field-organization">Organization Name</label>
+						<input class="form-control" type="text" id="field-organization" name="Organization Name" placeholder="placeholder"/>
+					</div>
+					<div class="form-group">
+						<label for="field-sector">Sector/Area of work</label>
+						<select class="form-control" id="field-sector" name="Sector/Area of work">
+							<option value="Animal Rights/Welfare">Animal Rights/Welfare</option>
+							<option value="Arts/Culture">Arts/Culture</option>
+							<option value="Community Development/Engagement">Community Development/Engagement</option>
+							<option value="Democratic Rights/Justice">Democratic Rights/Justice</option>
+							<option value="Disability/Mental Health">Disability/Mental Health</option>
+							<option value="Economic Development">Economic Development</option>
+							<option value="Education (Youth)">Education (Youth)</option>
+							<option value="Education (Adult)">Education (Adult)</option>
+							<option value="Environment">Environment</option>
+							<option value="Food">Food</option>
+							<option value="Foreign Affairs">Foreign Affairs</option>
+							<option value="Gender/Sexuality">Gender/Sexuality</option>
+							<option value="General">General</option>
+							<option value="Health/Healthcare">Health/Healthcare</option>
+							<option value="Humanitarianism/Emergency Relief">Humanitarianism/Emergency Relief</option>
+							<option value="History/Archives">History/Archives</option>
+							<option value="Housing/Homelessness">Housing/Homelessness</option>
+							<option value="International Relations/Development">International Relations/Development</option>
+							<option value="Race/Immigration">Race/Immigration</option>
+							<option value="Religion">Religion</option>
+							<option value="Poverty">Poverty</option>
+							<option value="Science/Technology">Science/Technology</option>
+							<option value="Youth Development">Youth Development</option>
+							<option value="Other">Other</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="field-org-summary">Organization summary</label>
+						<textarea class="form-control" type="text" id="field-org-summary" name="Organization summary" placeholder="placeholder"></textarea>
+						<small class="text-muted">Max. 100 words</small>
+					</div>
+					<div class="form-group">
+						<label for="field-help">What do you need help with?</label>
+						<textarea class="form-control" type="text" id="field-help" name="What do you need help with?" placeholder="placeholder"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="field-contact-name">Name</label>
+						<input class="form-control" type="text" id="field-contact-name" name="Name" placeholder="placeholder" required />
+					</div>
+					<div class="form-group">
+						<label for="field-contact-position">Position</label>
+						<input class="form-control" type="text" id="field-contact-position" name="Position" placeholder="placeholder"/>
+					</div>
+					<div class="form-group">
+						<label for="field-contact-email">Email</label>
+						<input class="form-control" type="email" id="field-contact-email" name="Email" placeholder="placeholder"/>
+					</div>
+					<div class="form-group">
+						<label for="field-contact-phone">Phone</label>
+						<input class="form-control" type="number" id="field-contact-phone" name="Phone" placeholder="placeholder"/>
+					</div>
+					<div class="form-group">
+						<label for="field-organization">Website</label>
+						<input class="form-control" type="text" id="field-contact-website" name="Website" placeholder="placeholder"/>
+					</div>
+					
+					
+					<!-- TO DO - change to Jamie's email once it is setup -->
+					<input type="hidden" name="*default_email" value="anibloe@aol.com" />
+					<input type="hidden" name="*bcc" value="ashleynibloe@gmail.com"/>
+					<input type="hidden" name="*reply" value="Email"/>
+					<input type="hidden" name="*redirect" value=""/>
+					<input type="hidden" name="*honeypot"/>
+					<input type="hidden" name="*subject" value="pprresearch.com enquiry" />
+            
+					
+					<button type="submit" class="btn btn-outline-primary">Submit</button>
+				</form>
+		
+				<script type="text/javascript">
+					$(function() {
+						var form = $('#contact-form');
+						
+						$(form).submit(function(event) {
+							event.preventDefault();
+							
+							var formData = $(form).serialize();
+						
+							$.ajax({
+								method: 'POST',
+								url: $(form).attr('action'),
+								dataType: 'json',
+								accepts: 'application/json',
+								data: {hello: "Hi there!"},
+								success: function(data) {
+									$('#contact-form-messages').text("Thanks!");
+									console.log(data);
+								},
+								error: function(err) {
+									$('#contact-form-messages').text("ERROR!");
+									console.log(err);
+									console.log(data);
+									// TO DO - clear the form
+								}
+							});
+						});
+					});
+				</script>
+		
+				<script type="text/javascript">
+					// TO DO - validation not working
+					$('#field-org-summary').keyup(function() {
+						if(this.value.match (/\S+/g).length > 100) {
+							var t = $(this).val();
+							var len = $(this).val().length;
+							$(this).text(t.substring(0, len));
+						//	this.next("small").addClass("alert-danger");
+							this.focus();
+						}
+						else {
+						//	this.next().removeClass("alert-danger");
+						}
+					});
+				</script>
+				
+				<div id="contact-form-messages"></div>
 				
 			</section>
 		</main>
