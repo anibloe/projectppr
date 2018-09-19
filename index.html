@@ -163,10 +163,18 @@
 				
 				<form action="https://www.enformed.io/nhsvnvt7" method="POST" name="contact" id="contact-form">
 					<div class="form-group">
+						<label for="form-chooser">What do you want to get in touch about?</label>
+						<select class="form-control" id="form-chooser">
+							<option selected>Project request</option>
+							<option>General enquiry</option>
+							<option>Website</option>
+						</select>
+					</div>
+					<div class="form-group form-chooser-1">
 						<label for="field-organization">Organization Name</label>
 						<input class="form-control" type="text" id="field-organization" name="Organization Name" placeholder="placeholder"/>
 					</div>
-					<div class="form-group">
+					<div class="form-group form-chooser-1">
 						<label for="field-sector">Sector/Area of work</label>
 						<select class="form-control" id="field-sector" name="Sector/Area of work">
 							<option value="Animal Rights/Welfare">Animal Rights/Welfare</option>
@@ -195,12 +203,12 @@
 							<option value="Other">Other</option>
 						</select>
 					</div>
-					<div class="form-group">
+					<div class="form-group form-chooser-1">
 						<label for="field-org-summary">Organization summary</label>
 						<textarea class="form-control" type="text" id="field-org-summary" name="Organization summary" placeholder="placeholder"></textarea>
 						<small class="text-muted">Max. 100 words</small>
 					</div>
-					<div class="form-group">
+					<div class="form-group form-chooser-1">
 						<label for="field-help">What do you need help with?</label>
 						<textarea class="form-control" type="text" id="field-help" name="What do you need help with?" placeholder="placeholder"></textarea>
 					</div>
@@ -208,7 +216,7 @@
 						<label for="field-contact-name">Name</label>
 						<input class="form-control" type="text" id="field-contact-name" name="Name" placeholder="placeholder" required />
 					</div>
-					<div class="form-group">
+					<div class="form-group form-chooser-1">
 						<label for="field-contact-position">Position</label>
 						<input class="form-control" type="text" id="field-contact-position" name="Position" placeholder="placeholder"/>
 					</div>
@@ -216,27 +224,36 @@
 						<label for="field-contact-email">Email</label>
 						<input class="form-control" type="email" id="field-contact-email" name="Email" placeholder="placeholder"/>
 					</div>
-					<div class="form-group">
+					<div class="form-group form-chooser-1">
 						<label for="field-contact-phone">Phone</label>
 						<input class="form-control" type="number" id="field-contact-phone" name="Phone" placeholder="placeholder"/>
 					</div>
-					<div class="form-group">
+					<div class="form-group form-chooser-1">
 						<label for="field-organization">Website</label>
 						<input class="form-control" type="text" id="field-contact-website" name="Website" placeholder="placeholder"/>
 					</div>
 					
+					<div class="form-group form-chooser-2">
+						<label for="field-message">Message</label>
+						<textarea class="form-control" id="field-message" rows="4"></textarea>
+					</div>
 					
-					<!-- TO DO - change to Jamie's email once it is setup -->
-					<input type="hidden" name="*default_email" value="anibloe@aol.com" />
-					<input type="hidden" name="*bcc" value="ashleynibloe@gmail.com"/>
-					<input type="hidden" name="*reply" value="Email"/>
-					<input type="hidden" name="*redirect" value=""/>
-					<input type="hidden" name="*honeypot"/>
-					<input type="hidden" name="*subject" value="pprresearch.com enquiry" />
-            
-					
-					<button type="submit" class="btn btn-outline-primary">Submit</button>
+					<div class="form-group">
+						<!-- TO DO - change to Jamie's email once it is setup -->
+						<input type="hidden" name="*default_email" value="anibloe@aol.com"/>
+						<input type="hidden" name="*bcc" value="ashleynibloe@gmail.com"/>
+						<input type="hidden" name="*reply" value="Email"/>
+						<input type="hidden" name="*redirect" value=""/>
+						<input type="hidden" name="*honeypot"/>
+						<input type="hidden" name="*subject" value="pprresearch.com enquiry"/>
+						
+						<button type="submit" class="btn btn-outline-primary">Submit</button>
+					</div>
 				</form>
+				
+				<div id="form-messages">
+					<!-- error messages here -->
+				</div>
 		
 				<script type="text/javascript">
 					$(function() {
@@ -254,11 +271,11 @@
 								accepts: 'application/json',
 								data: {hello: "Hi there!"},
 								success: function(data) {
-									$('#contact-form-messages').text("Thanks!");
+									$('#form-messages').text("Thanks!");
 									console.log(data);
 								},
 								error: function(err) {
-									$('#contact-form-messages').text("ERROR!");
+									$('#form-messages').text("ERROR!");
 									console.log(err);
 									console.log(data);
 									// TO DO - clear the form
@@ -284,13 +301,48 @@
 					});
 				</script>
 				
-				<div id="contact-form-messages"></div>
+				<script type="text/javascript">
+					// Document ready
+					$(function() {
+						$("#form-chooser").on("change", function() {
+							var selection = this.value;
+							
+							if(selection == "General enquiry") {
+								$(".form-chooser-1").hide();
+								$("#field-message").attr("placeholder", "Please enter your enquiry here.");
+								$(".form-chooser-2").show();
+							}
+							else if(selection == "Website") {
+								$(".form-chooser-1").hide();
+								$("#field-message").attr("placeholder", "Please enter your comment/query/issue here.");
+								$(".form-chooser-2").show();
+							}
+							else {
+								$(".form-chooser-1").show();
+								$(".form-chooser-2").hide();
+							}
+						});
+					});
+				</script>
 				
+			</section>
+		
+			<section id="payment">
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="" id="" value=""/>
+					<label class="form-check-label" for="">Credit card</label>
+					
+					<input class="form-check-input" type="radio" name="" id="" value=""/>
+					<label class="form-check-label" for="">Google Pay</label>
+					
+					<input class="form-check-input" type="radio" name="" id="" value=""/>
+					<label class="form-check-label" for="">Check</label>
+				</div>
 			</section>
 		</main>
 	
 		<footer>
-			<p>Website by <a href="https://www.linkedin.com/in/anibloe/" class="fab fa-linkedin">Ashley Nibloe</a></p>
+			<p>Website by <a href="https://www.linkedin.com/in/anibloe/">Ashley Nibloe <i class="fab fa-linkedin"></i></a></p>
 		</footer>
 	</body>
 </html>
