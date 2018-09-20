@@ -8,8 +8,8 @@
 		
 		<!-- css -->
 		<link rel="stylesheet" href="./bs/bootstrap.min.css"/>
-		<link rel="stylesheet" href="styles.css"/>
 		<link rel="stylesheet" href="./fa/css/all.css"/>
+		<link rel="stylesheet" href="styles.css"/>
 		<!-- scripts -->
 		<script src="./bs/bootstrap.bundle.min.js"></script>
 		<script src="./jquery-3.3.1.min.js"></script>
@@ -20,13 +20,15 @@
 		
 		<nav>
 			<ul>
-				<li><a href="#">What I offer</a></li>
-				<li><a href="#">What I can do for you</a></li>
-				<li><a href="#">Why me</a></li>
-				<li><a href="#">How I Work</a></li>
-				<li><a href="#">About Me</a></li>
-				<li><a href="#">FAQs</a></li>
-				<li><a href="#">Contact</a></li>
+				<li title="what-i-offer"><a href="#">What I offer</a></li>
+				<li title="what-i-can"><a href="#">What I can do for you</a></li>
+				<li title="why"><a href="#">Why me</a></li>
+				<li title="how-i-work"><a href="#">How I Work</a></li>
+				<li title="about"><a href="#">About Me</a></li>
+				<li title="faq"><a href="#">FAQs</a></li>
+				<li title="clients"><a href="#">Previous clients and testimonials</a></li>
+				<li title="contact"><a href="#">Contact</a></li>
+				<li title="payment"><a href="#">Make a payment</a></li>
 			</ul>
 		</nav>
 		
@@ -170,11 +172,11 @@
 							<option>Website</option>
 						</select>
 					</div>
-					<div class="form-group form-chooser-1">
+					<div class="form-group full" style="display:none;">
 						<label for="field-organization">Organization Name</label>
 						<input class="form-control" type="text" id="field-organization" name="Organization Name" placeholder="placeholder"/>
 					</div>
-					<div class="form-group form-chooser-1">
+					<div class="form-group full" style="display:none;">
 						<label for="field-sector">Sector/Area of work</label>
 						<select class="form-control" id="field-sector" name="Sector/Area of work">
 							<option value="Animal Rights/Welfare">Animal Rights/Welfare</option>
@@ -203,47 +205,45 @@
 							<option value="Other">Other</option>
 						</select>
 					</div>
-					<div class="form-group form-chooser-1">
+					<div class="form-group full" style="display:none;">
 						<label for="field-org-summary">Organization summary</label>
 						<textarea class="form-control" type="text" id="field-org-summary" name="Organization summary" placeholder="placeholder"></textarea>
 						<small class="text-muted">Max. 100 words</small>
 					</div>
-					<div class="form-group form-chooser-1">
+					<div class="form-group full" style="display:none;">
 						<label for="field-help">What do you need help with?</label>
-						<textarea class="form-control" type="text" id="field-help" name="What do you need help with?" placeholder="placeholder"></textarea>
+						<textarea class="form-control" type="text" id="field-help" name="What do you need help with" placeholder="placeholder"></textarea>
 					</div>
-					<div class="form-group">
+					<div class="form-group full small" style="display:none;">
 						<label for="field-contact-name">Name</label>
 						<input class="form-control" type="text" id="field-contact-name" name="Name" placeholder="placeholder" required />
 					</div>
-					<div class="form-group form-chooser-1">
+					<div class="form-group full" style="display:none;">
 						<label for="field-contact-position">Position</label>
 						<input class="form-control" type="text" id="field-contact-position" name="Position" placeholder="placeholder"/>
 					</div>
-					<div class="form-group">
+					<div class="form-group full small" style="display:none;">
 						<label for="field-contact-email">Email</label>
-						<input class="form-control" type="email" id="field-contact-email" name="Email" placeholder="placeholder"/>
+						<input class="form-control" type="email" id="field-contact-email" name="email" placeholder="placeholder"/>
 					</div>
-					<div class="form-group form-chooser-1">
+					<div class="form-group full" style="display:none;">
 						<label for="field-contact-phone">Phone</label>
 						<input class="form-control" type="number" id="field-contact-phone" name="Phone" placeholder="placeholder"/>
 					</div>
-					<div class="form-group form-chooser-1">
-						<label for="field-organization">Website</label>
+					<div class="form-group full" style="display:none;">
+						<label for="field-contact-website">Website</label>
 						<input class="form-control" type="text" id="field-contact-website" name="Website" placeholder="placeholder"/>
 					</div>
 					
-					<div class="form-group form-chooser-2">
+					<div class="form-group small" style="display:none;">
 						<label for="field-message">Message</label>
-						<textarea class="form-control" id="field-message" rows="4"></textarea>
+						<textarea class="form-control" id="field-message" name="Message" rows="4"></textarea>
 					</div>
 					
 					<div class="form-group">
-						<!-- TO DO - change to Jamie's email once it is setup -->
-						<input type="hidden" name="*default_email" value="anibloe@aol.com"/>
-						<input type="hidden" name="*bcc" value="ashleynibloe@gmail.com"/>
-						<input type="hidden" name="*reply" value="Email"/>
-						<input type="hidden" name="*redirect" value=""/>
+						<input type="hidden" name="*default_email" value="thefeederfish@hotmail.com"/><!-- TO DO - change to Jamie's email once it is setup -->
+						<input type="hidden" name="*bcc" value="dev@pprresearch.com"/>
+						<input type="hidden" name="*reply" value="email"/>
 						<input type="hidden" name="*honeypot"/>
 						<input type="hidden" name="*subject" value="pprresearch.com enquiry"/>
 						
@@ -251,13 +251,30 @@
 					</div>
 				</form>
 				
-				<div id="form-messages">
+				<div id="form-messages" style="display:none;">
 					<!-- error messages here -->
 				</div>
+			</section>
+		
+			<section id="payment">
+				<header>Make a Payment</header>
+				
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="" id="" value=""/>
+					<label class="form-check-label" for="">Credit card</label>
+					
+					<input class="form-check-input" type="radio" name="" id="" value=""/>
+					<label class="form-check-label" for="">Google Pay</label>
+					
+					<input class="form-check-input" type="radio" name="" id="" value=""/>
+					<label class="form-check-label" for="">Check</label>
+				</div>
+			</section>
 		
 				<script type="text/javascript">
 					$(function() {
 						var form = $('#contact-form');
+						var formMessages = $('#form-messages');
 						
 						$(form).submit(function(event) {
 							event.preventDefault();
@@ -269,15 +286,14 @@
 								url: $(form).attr('action'),
 								dataType: 'json',
 								accepts: 'application/json',
-								data: {hello: "Hi there!"},
+								data: formData,
 								success: function(data) {
-									$('#form-messages').text("Thanks!");
+									formMessages.text("Thanks!").show();
 									console.log(data);
 								},
 								error: function(err) {
-									$('#form-messages').text("ERROR!");
+									formMessages.text("ERROR!").show();
 									console.log(err);
-									console.log(data);
 									// TO DO - clear the form
 								}
 							});
@@ -304,41 +320,32 @@
 				<script type="text/javascript">
 					// Document ready
 					$(function() {
+						// Shows the appropriate form fields depending on reason for contact
 						$("#form-chooser").on("change", function() {
 							var selection = this.value;
 							
 							if(selection == "General enquiry") {
-								$(".form-chooser-1").hide();
+								$(".form-group.full").hide();
 								$("#field-message").attr("placeholder", "Please enter your enquiry here.");
-								$(".form-chooser-2").show();
+								$(".form-group.small").show();
 							}
 							else if(selection == "Website") {
-								$(".form-chooser-1").hide();
+								$(".form-group.full").hide();
 								$("#field-message").attr("placeholder", "Please enter your comment/query/issue here.");
-								$(".form-chooser-2").show();
+								$(".form-group.small").show();
 							}
 							else {
-								$(".form-chooser-1").show();
-								$(".form-chooser-2").hide();
+								$(".form-group.small").hide();
+								$(".form-group.full").show();
 							}
 						});
 					});
+					// Hides all sections, except the one clicked
+					$("nav li").click(function() {
+						$("section").hide();
+						$("#" + this.title).show();
+					});
 				</script>
-				
-			</section>
-		
-			<section id="payment">
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="" id="" value=""/>
-					<label class="form-check-label" for="">Credit card</label>
-					
-					<input class="form-check-input" type="radio" name="" id="" value=""/>
-					<label class="form-check-label" for="">Google Pay</label>
-					
-					<input class="form-check-input" type="radio" name="" id="" value=""/>
-					<label class="form-check-label" for="">Check</label>
-				</div>
-			</section>
 		</main>
 	
 		<footer>

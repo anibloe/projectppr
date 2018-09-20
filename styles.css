@@ -2,19 +2,42 @@
    font-family: CharisSILRegular;
    font-weight: normal;
    font-style: normal;
-   src: url(/CharisSIL-R.ttf);
+   src: url(./CharisSIL-R.ttf);
 } 
 
 body {
 	font-family: CharisSILRegular;
 }
 
+/* Components */
 header {
 	font-weight: bold;
 }
 
+nav {
+	display: inline-block;
+	float: left;
+	width: 15%;
+}
+
+nav li {
+	list-style: none;
+}
+
+main {
+	display: inline-block;
+	float: left;
+	width: 85%;
+}
+
 section {
 	padding-bottom: 100px;
+}
+
+footer {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
 }
 
 #strapline span {
@@ -26,10 +49,10 @@ section {
 }
 
 .faq-q {
-	
+	font-weight: bold;
 }
 
 .faq-a {
-	
+	padding-bottom: 10px;
 }
 
