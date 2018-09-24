@@ -11,8 +11,8 @@
 		<link rel="stylesheet" href="./fa/css/all.css"/>
 		<link rel="stylesheet" href="styles.css"/>
 		<!-- scripts -->
-		<script src="./bs/bootstrap.bundle.min.js"></script>
 		<script src="./jquery-3.3.1.min.js"></script>
+		<script src="./bs/bootstrap.min.js"></script>
 	</head>
 	
 	<body>
@@ -50,7 +50,7 @@
 				</ul>
 			</section>
 		
-			<section id="what-i-can">
+			<section id="what-i-can" style="display:none;">
 				<header>What I can do for you</header>
 				<ul>
 					<li>Provide you with new avenues for income and inform your strategy for targeting and approaching potential funders</li>
@@ -62,7 +62,7 @@
 				<p>See some of my previous clients and testimonials for ideas on what I can offer</p>
 			</section>
 		
-			<section id="why">
+			<section id="why" style="display:none;">
 				<header>Why me</header>
 				
 				<ul>
@@ -77,7 +77,7 @@
 				</ul>
 			</section>
 			
-			<section id="how-i-work">
+			<section id="how-i-work" style="display:none;">
 				<header>How I Work</header>
 				
 				<ol>
@@ -107,7 +107,7 @@
 				</ol>
 			</section>
 		
-			<section id="about">
+			<section id="about" style="display:none;">
 				<header>About me</header>
 				
 				<p>Originally from the UK, I moved from academic history to working for the British government as a policy researcher and legislative affairs expert.  Trained to be deployed at short notice to provide expert analysis on any topic as needed, I provided policy recommendations and justification to senior government officials and Ministers.  I produced high-level briefing on subjects as varied as Brexit, environmental protection legislation, Eurozone economics, diplomatic relations, public sector transparency law, international trade agreements, healthcare systems, renewable energy, anti-corruption measures and the protection of democratic rights.</p>
@@ -119,7 +119,7 @@
 				<a href="http://www.linkedin.com/in/jamie-scott-us" class="fab fa-linkedin"></a>
 			</section>
 		
-			<section id="faq">
+			<section id="faq" style="display:none;">
 				<header>FAQs</header>
 				
 				<p class="faq-q">What types of organizations do you work with?</p>
@@ -155,30 +155,32 @@
 				<p class="faq-a">At this time, I am unable to accept work for organizations outside the United States.</p>
 			</section>
 			
-			<section id="clients">
+			<section id="clients" style="display:none;">
 				<header>Previous clients and testimonials</header>
 				
 			</section>
 			
-			<section id="contact">
+			<section id="contact" style="display:none;">
 				<header>Contact Form</header>
 				
-				<form action="https://www.enformed.io/nhsvnvt7" method="POST" name="contact" id="contact-form">
+				<form action="https://www.enformed.io/nhsvnvt7" method="POST" name="contact" id="contact-form" data-toggle="validator">
 					<div class="form-group">
 						<label for="form-chooser">What do you want to get in touch about?</label>
 						<select class="form-control" id="form-chooser">
-							<option selected>Project request</option>
+							<option selected>--</option>
+							<option>Project request</option>
 							<option>General enquiry</option>
 							<option>Website</option>
 						</select>
 					</div>
 					<div class="form-group full" style="display:none;">
 						<label for="field-organization">Organization Name</label>
-						<input class="form-control" type="text" id="field-organization" name="Organization Name" placeholder="placeholder"/>
+						<input class="form-control" type="text" id="field-organization" name="Organization Name" placeholder="Organization Name" required/>
 					</div>
 					<div class="form-group full" style="display:none;">
 						<label for="field-sector">Sector/Area of work</label>
-						<select class="form-control" id="field-sector" name="Sector/Area of work">
+						<select class="form-control" id="field-sector" name="Sector/Area of work" required>
+							<option value="" selected>...</option>
 							<option value="Animal Rights/Welfare">Animal Rights/Welfare</option>
 							<option value="Arts/Culture">Arts/Culture</option>
 							<option value="Community Development/Engagement">Community Development/Engagement</option>
@@ -207,32 +209,32 @@
 					</div>
 					<div class="form-group full" style="display:none;">
 						<label for="field-org-summary">Organization summary</label>
-						<textarea class="form-control" type="text" id="field-org-summary" name="Organization summary" placeholder="placeholder"></textarea>
+						<textarea class="form-control" type="text" id="field-org-summary" name="Organization summary" placeholder="placeholder" required></textarea>
 						<small class="text-muted">Max. 100 words</small>
 					</div>
 					<div class="form-group full" style="display:none;">
 						<label for="field-help">What do you need help with?</label>
-						<textarea class="form-control" type="text" id="field-help" name="What do you need help with" placeholder="placeholder"></textarea>
+						<textarea class="form-control" type="text" id="field-help" name="What do you need help with" placeholder="placeholder" required></textarea>
 					</div>
 					<div class="form-group full small" style="display:none;">
 						<label for="field-contact-name">Name</label>
-						<input class="form-control" type="text" id="field-contact-name" name="Name" placeholder="placeholder" required />
+						<input class="form-control" type="text" id="field-contact-name" name="Name" placeholder="Your name" required/>
 					</div>
 					<div class="form-group full" style="display:none;">
 						<label for="field-contact-position">Position</label>
-						<input class="form-control" type="text" id="field-contact-position" name="Position" placeholder="placeholder"/>
+						<input class="form-control" type="text" id="field-contact-position" name="Position" placeholder="The position you hold in the organization"/>
 					</div>
 					<div class="form-group full small" style="display:none;">
 						<label for="field-contact-email">Email</label>
-						<input class="form-control" type="email" id="field-contact-email" name="email" placeholder="placeholder"/>
+						<input class="form-control" type="email" id="field-contact-email" name="email" placeholder="Your work email" required/>
 					</div>
 					<div class="form-group full" style="display:none;">
 						<label for="field-contact-phone">Phone</label>
-						<input class="form-control" type="number" id="field-contact-phone" name="Phone" placeholder="placeholder"/>
+						<input class="form-control" type="number" id="field-contact-phone" name="Phone" placeholder="Your contact number"/>
 					</div>
 					<div class="form-group full" style="display:none;">
 						<label for="field-contact-website">Website</label>
-						<input class="form-control" type="text" id="field-contact-website" name="Website" placeholder="placeholder"/>
+						<input class="form-control" type="text" id="field-contact-website" name="Website" placeholder="Your company website"/>
 					</div>
 					
 					<div class="form-group small" style="display:none;">
@@ -240,9 +242,10 @@
 						<textarea class="form-control" id="field-message" name="Message" rows="4"></textarea>
 					</div>
 					
-					<div class="form-group">
-						<input type="hidden" name="*default_email" value="thefeederfish@hotmail.com"/><!-- TO DO - change to Jamie's email once it is setup -->
-						<input type="hidden" name="*bcc" value="dev@pprresearch.com"/>
+					<div class="form-group full small" style="display:none;">
+						<!-- TO DO - change below to jamie@ when contact form is working -->
+						<input type="hidden" name="*default_email" value="dev@pprresearch.com" id="default-email"/>
+						<!--input type="hidden" name="*bcc" value="dev@pprresearch.com"/-->
 						<input type="hidden" name="*reply" value="email"/>
 						<input type="hidden" name="*honeypot"/>
 						<input type="hidden" name="*subject" value="pprresearch.com enquiry"/>
@@ -256,7 +259,7 @@
 				</div>
 			</section>
 		
-			<section id="payment">
+			<section id="payment" style="display:none;">
 				<header>Make a Payment</header>
 				
 				<div class="form-check">
@@ -271,81 +274,92 @@
 				</div>
 			</section>
 		
-				<script type="text/javascript">
-					$(function() {
-						var form = $('#contact-form');
-						var formMessages = $('#form-messages');
+			<script type="text/javascript">
+				// Sends the AJAX request for the contact form
+				$(function() {
+					var form = $('#contact-form');
+					var formMessages = $('#form-messages');
+					
+					$(form).submit(function(event) {
+						event.preventDefault();
 						
-						$(form).submit(function(event) {
-							event.preventDefault();
-							
-							var formData = $(form).serialize();
-						
-							$.ajax({
-								method: 'POST',
-								url: $(form).attr('action'),
-								dataType: 'json',
-								accepts: 'application/json',
-								data: formData,
-								success: function(data) {
-									formMessages.text("Thanks!").show();
-									console.log(data);
-								},
-								error: function(err) {
-									formMessages.text("ERROR!").show();
-									console.log(err);
-									// TO DO - clear the form
-								}
-							});
+						var formData = $(form).serialize();
+					
+						$.ajax({
+							method: 'POST',
+							url: $(form).attr('action'),
+							dataType: 'json',
+							accepts: 'application/json',
+							data: formData,
+							success: function(data) {
+								formMessages.text("Thanks!").show();
+								console.log(data);
+							},
+							error: function(err) {
+								formMessages.text("ERROR!").show();
+								console.log(err);
+								// TO DO - clear the form
+							}
 						});
 					});
-				</script>
-		
-				<script type="text/javascript">
-					// TO DO - validation not working
-					$('#field-org-summary').keyup(function() {
-						if(this.value.match (/\S+/g).length > 100) {
-							var t = $(this).val();
-							var len = $(this).val().length;
-							$(this).text(t.substring(0, len));
-						//	this.next("small").addClass("alert-danger");
-							this.focus();
+				});
+			</script>
+	
+			<script type="text/javascript">
+				// TO DO - validation not working
+				$('#field-org-summary').keyup(function() {
+					if(this.value.match (/\S+/g).length > 100) {
+						var t = $(this).val();
+						var len = $(this).val().length;
+						$(this).text(t.substring(0, len));
+					//	this.next("small").addClass("alert-danger");
+						this.focus();
+					}
+					else {
+					//	this.next().removeClass("alert-danger");
+					}
+				});
+			</script>
+			
+			<script type="text/javascript">
+				// Document ready
+				$(function() {
+					// Shows the appropriate form fields and customises them depending on the reason for contact
+					$("#form-chooser").on("change", function() {
+						var selection = this.value;
+						if(selection == "--") {
+							$(".form-group.full").hide();
+							$(".form-group.small").hide();
+							$(".form-group.full .form-control").attr("data-validate", "false");
+							$(".form-group.small .form-control").attr("data-validate", "false");
+						}
+						else if(selection == "General enquiry") {
+							$(".form-group.full").attr("data-validate", "false").hide();
+							$("#field-message").attr("placeholder", "Please enter your enquiry here.");
+						//	$("#default-email").attr("value", "jamie@pprresearch.com"); TO DO - uncomment this when form is working
+							$(".form-group.small").attr("data-validate", "true").show();
+						}
+						else if(selection == "Website") {
+							$(".form-group.full").attr("data-validate", "false").hide();
+							$("#field-message").attr("placeholder", "Please enter your comment/query/issue here.");
+							$("#field-contact-email").attr("placeholder", "Your contact email");
+							$("#default-email").attr("value", "dev@pprresearch.com");
+							$(".form-group.small").attr("data-validate", "true").show();
 						}
 						else {
-						//	this.next().removeClass("alert-danger");
+							$(".form-group.small").attr("data-validate", "false").hide();
+						//	$("#default-email").attr("value", "jamie@pprresearch.com"); TO DO - uncomment this when form is working
+							$(".form-group.full").attr("data-validate", "true").show();
 						}
+						$("#contact-form").validator("update");
 					});
-				</script>
-				
-				<script type="text/javascript">
-					// Document ready
-					$(function() {
-						// Shows the appropriate form fields depending on reason for contact
-						$("#form-chooser").on("change", function() {
-							var selection = this.value;
-							
-							if(selection == "General enquiry") {
-								$(".form-group.full").hide();
-								$("#field-message").attr("placeholder", "Please enter your enquiry here.");
-								$(".form-group.small").show();
-							}
-							else if(selection == "Website") {
-								$(".form-group.full").hide();
-								$("#field-message").attr("placeholder", "Please enter your comment/query/issue here.");
-								$(".form-group.small").show();
-							}
-							else {
-								$(".form-group.small").hide();
-								$(".form-group.full").show();
-							}
-						});
-					});
-					// Hides all sections, except the one clicked
-					$("nav li").click(function() {
-						$("section").hide();
-						$("#" + this.title).show();
-					});
-				</script>
+				});
+				// Hides all sections, except the one clicked
+				$("nav li").click(function() {
+					$("section").hide();
+					$("#" + this.title).show();
+				});
+			</script>
 		</main>
 	
 		<footer>
