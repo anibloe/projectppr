@@ -173,11 +173,11 @@
 							<option>Website</option>
 						</select>
 					</div>
-					<div class="form-group full" style="display:none;">
+					<div class="form-group long" style="display:none;">
 						<label for="field-organization">Organization Name</label>
 						<input class="form-control" type="text" id="field-organization" name="Organization Name" placeholder="Organization Name" required/>
 					</div>
-					<div class="form-group full" style="display:none;">
+					<div class="form-group long" style="display:none;">
 						<label for="field-sector">Sector/Area of work</label>
 						<select class="form-control" id="field-sector" name="Sector/Area of work" required>
 							<option value="" selected>...</option>
@@ -207,42 +207,42 @@
 							<option value="Other">Other</option>
 						</select>
 					</div>
-					<div class="form-group full" style="display:none;">
+					<div class="form-group long" style="display:none;">
 						<label for="field-org-summary">Organization summary</label>
 						<textarea class="form-control" type="text" id="field-org-summary" name="Organization summary" placeholder="placeholder" required></textarea>
 						<small class="text-muted">Max. 100 words</small>
 					</div>
-					<div class="form-group full" style="display:none;">
+					<div class="form-group long" style="display:none;">
 						<label for="field-help">What do you need help with?</label>
 						<textarea class="form-control" type="text" id="field-help" name="What do you need help with" placeholder="placeholder" required></textarea>
 					</div>
-					<div class="form-group full small" style="display:none;">
+					<div class="form-group long short" style="display:none;">
 						<label for="field-contact-name">Name</label>
 						<input class="form-control" type="text" id="field-contact-name" name="Name" placeholder="Your name" required/>
 					</div>
-					<div class="form-group full" style="display:none;">
+					<div class="form-group long" style="display:none;">
 						<label for="field-contact-position">Position</label>
 						<input class="form-control" type="text" id="field-contact-position" name="Position" placeholder="The position you hold in the organization"/>
 					</div>
-					<div class="form-group full small" style="display:none;">
+					<div class="form-group long short" style="display:none;">
 						<label for="field-contact-email">Email</label>
 						<input class="form-control" type="email" id="field-contact-email" name="email" placeholder="Your work email" required/>
 					</div>
-					<div class="form-group full" style="display:none;">
+					<div class="form-group long" style="display:none;">
 						<label for="field-contact-phone">Phone</label>
 						<input class="form-control" type="number" id="field-contact-phone" name="Phone" placeholder="Your contact number"/>
 					</div>
-					<div class="form-group full" style="display:none;">
+					<div class="form-group long" style="display:none;">
 						<label for="field-contact-website">Website</label>
 						<input class="form-control" type="text" id="field-contact-website" name="Website" placeholder="Your company website"/>
 					</div>
 					
-					<div class="form-group small" style="display:none;">
+					<div class="form-group short" style="display:none;">
 						<label for="field-message">Message</label>
 						<textarea class="form-control" id="field-message" name="Message" rows="4"></textarea>
 					</div>
 					
-					<div class="form-group full small" style="display:none;">
+					<div class="form-group long short" style="display:none;">
 						<!-- TO DO - change below to jamie@ when contact form is working -->
 						<input type="hidden" name="*default_email" value="dev@pprresearch.com" id="default-email"/>
 						<!--input type="hidden" name="*bcc" value="dev@pprresearch.com"/-->
@@ -325,35 +325,36 @@
 				// Document ready
 				$(function() {
 					// Shows the appropriate form fields and customises them depending on the reason for contact
-					$("#form-chooser").on("change", function() {
+					$("#form-chooser").val("--").on("change", function() {
 						var selection = this.value;
 						if(selection == "--") {
-							$(".form-group.full").hide();
-							$(".form-group.small").hide();
-							$(".form-group.full .form-control").attr("data-validate", "false");
-							$(".form-group.small .form-control").attr("data-validate", "false");
+							$(".form-group.long").hide();
+							$(".form-group.short").hide();
+							$(".form-group.long .form-control").attr("data-validate", "false");
+							$(".form-group.short .form-control").attr("data-validate", "false");
 						}
 						else if(selection == "General enquiry") {
-							$(".form-group.full").attr("data-validate", "false").hide();
+							$(".form-group.long").attr("data-validate", "false").hide();
 							$("#field-message").attr("placeholder", "Please enter your enquiry here.");
 						//	$("#default-email").attr("value", "jamie@pprresearch.com"); TO DO - uncomment this when form is working
-							$(".form-group.small").attr("data-validate", "true").show();
+							$(".form-group.short").attr("data-validate", "true").show();
 						}
 						else if(selection == "Website") {
-							$(".form-group.full").attr("data-validate", "false").hide();
+							$(".form-group.long").attr("data-validate", "false").hide();
 							$("#field-message").attr("placeholder", "Please enter your comment/query/issue here.");
 							$("#field-contact-email").attr("placeholder", "Your contact email");
 							$("#default-email").attr("value", "dev@pprresearch.com");
-							$(".form-group.small").attr("data-validate", "true").show();
+							$(".form-group.short").attr("data-validate", "true").show();
 						}
 						else {
-							$(".form-group.small").attr("data-validate", "false").hide();
+							$(".form-group.short").attr("data-validate", "false").hide();
 						//	$("#default-email").attr("value", "jamie@pprresearch.com"); TO DO - uncomment this when form is working
-							$(".form-group.full").attr("data-validate", "true").show();
+							$(".form-group.long").attr("data-validate", "true").show();
 						}
 						$("#contact-form").validator("update");
 					});
 				});
+				
 				// Hides all sections, except the one clicked
 				$("nav li").click(function() {
 					$("section").hide();
