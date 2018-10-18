@@ -7,12 +7,18 @@
 		<title>Project PPR</title>
 		
 		<!-- css -->
-		<link rel="stylesheet" href="./bs/bootstrap.min.css"/>
-		<link rel="stylesheet" href="./fa/css/all.css"/>
-		<link rel="stylesheet" href="styles.css"/>
+		<link type="text/css" rel="stylesheet" href="./bs/bootstrap.min.css"/>
+		<link type="text/css" rel="stylesheet" href="./fa/css/all.css"/>
+		<link type="text/css" rel="stylesheet" href="styles.css"/>
+		
 		<!-- scripts -->
 		<script src="./jquery-3.3.1.min.js"></script>
 		<script src="./bs/bootstrap.min.js"></script>
+		
+		<!-- Square payment integration -->
+		<script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
+		<script type="text/javascript" src="./sq/sqpaymentform.js"></script>
+		<link type="text/css" rel="stylesheet" href="./sq/sqpaymentform.css">
 	</head>
 	
 	<body>
@@ -288,7 +294,7 @@
 						$.ajax({
 							method: 'POST',
 							url: $(form).attr('action'),
-							dataType: 'json',
+						//	dataType: 'json',
 							accepts: 'application/json',
 							data: formData,
 							success: function(data) {
@@ -307,7 +313,7 @@
 	
 			<script type="text/javascript">
 				// TO DO - validation not working
-				$('#field-org-summary').keyup(function() {
+				$('#\zzzzzzzzzzzzzzzfield-org-summary').keyup(function() {
 					if(this.value.match (/\S+/g).length > 100) {
 						var t = $(this).val();
 						var len = $(this).val().length;
@@ -351,7 +357,7 @@
 						//	$("#default-email").attr("value", "jamie@pprresearch.com"); TO DO - uncomment this when form is working
 							$(".form-group.long").attr("data-validate", "true").show();
 						}
-						$("#contact-form").validator("update");
+						//$("#contact-form").validator("update"); TO DO
 					});
 				});
 				
