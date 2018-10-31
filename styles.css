@@ -48,6 +48,11 @@ footer {
 	font-style: italic;
 }
 
+a, a:hover {
+	text-decoration: none;
+}
+
+/* FAQ-specific */
 .faq-q {
 	font-weight: bold;
 }
@@ -56,3 +61,41 @@ footer {
 	padding-bottom: 10px;
 }
 
+/* Holding page */
+#holding {
+	width: 100%;
+}
+.wrapper {
+	padding: 150px;
+}
+
+#holding .inline {
+	display: inline-block;
+	position: relative;
+	float: left;
+}
+#holding .left {
+	padding-right: 50px;
+	width: 80%;
+}
+#holding .right {
+	border-left: 4px solid #198419;
+	height: 212px;
+	width: 20%;
+	text-align: center;
+}
+#holding .left img {
+	float: right;
+	width: 600px;
+}
+
+.ppr-green {
+    color: #198419;
+}
+
+#icons {
+	flex-direction: column;
+	justify-content: space-evenly;
+	display: flex;
+	height: 140px;
+}
