@@ -7,10 +7,9 @@
 		<title>Project PPR</title>
 		
 		<!-- css -->
-		<link type="text/css" rel="stylesheet" href="./bs/bootstrap.min.css"/>
-		<link type="text/css" rel="stylesheet" href="./fa/css/all.css"/>
-		<link type="text/css" rel="stylesheet" href="styles.css"/>
-		
+		<link rel="stylesheet" href="./bs/bootstrap.min.css"/>
+		<link rel="stylesheet" href="./fa/css/all.css"/>
+		<link rel="stylesheet" href="styles.css"/>
 		<!-- scripts -->
 		<script src="./jquery-3.3.1.min.js"></script>
 		<script src="./bs/bootstrap.min.js"></script>
@@ -169,7 +168,7 @@
 			<section id="contact" style="display:none;">
 				<header>Contact Form</header>
 				
-				<form action="https://www.enformed.io/nhsvnvt7" method="POST" name="contact" id="contact-form" data-toggle="validator">
+				<form action="https://www.enformed.io/nhsvnvt7" method="POST" name="contact" id="contact-form" data-toggle="validator" role="form">
 					<div class="form-group">
 						<label for="form-chooser">What do you want to get in touch about?</label>
 						<select class="form-control" id="form-chooser">
@@ -222,25 +221,32 @@
 						<label for="field-help">What do you need help with?</label>
 						<textarea class="form-control" type="text" id="field-help" name="What do you need help with" placeholder="placeholder" required></textarea>
 					</div>
-					<div class="form-group long short" style="display:none;">
-						<label for="field-contact-name">Name</label>
-						<input class="form-control" type="text" id="field-contact-name" name="Name" placeholder="Your name" required/>
+					<div class="form-group">
+						<div class="form-group long short" style="display:none;">
+							<label for="field-contact-name">Name</label>
+							<input class="form-control" type="text" id="field-contact-name" name="Name" placeholder="Your name" required/>
+						</div>
+						<div class="form-group long" style="display:none;">
+							<label for="field-contact-position">Position</label>
+							<input class="form-control" type="text" id="field-contact-position" name="Position" placeholder="The position you hold in the organization"/>
+						</div>
+						<div class="form-group long short" style="display:none;">
+							<label for="field-contact-email">Email</label>
+							<input class="form-control" type="email" id="field-contact-email" name="email" placeholder="Your work email" required/>
+						</div>
+						<div class="form-group long" style="display:none;">
+							<label for="field-contact-phone">Phone</label>
+							<input class="form-control" type="number" id="field-contact-phone" name="Phone" placeholder="Your contact number"/>
+						</div>
+						<div class="form-group long" style="display:none;">
+							<label for="field-contact-website">Website</label>
+							<input class="form-control" type="text" id="field-contact-website" name="Website" placeholder="Your company website"/>
+						</div>
 					</div>
+					
 					<div class="form-group long" style="display:none;">
-						<label for="field-contact-position">Position</label>
-						<input class="form-control" type="text" id="field-contact-position" name="Position" placeholder="The position you hold in the organization"/>
-					</div>
-					<div class="form-group long short" style="display:none;">
-						<label for="field-contact-email">Email</label>
-						<input class="form-control" type="email" id="field-contact-email" name="email" placeholder="Your work email" required/>
-					</div>
-					<div class="form-group long" style="display:none;">
-						<label for="field-contact-phone">Phone</label>
-						<input class="form-control" type="number" id="field-contact-phone" name="Phone" placeholder="Your contact number"/>
-					</div>
-					<div class="form-group long" style="display:none;">
-						<label for="field-contact-website">Website</label>
-						<input class="form-control" type="text" id="field-contact-website" name="Website" placeholder="Your company website"/>
+						<label for="field-contact-name">How did you hear about PPR?</label>
+						<textarea class="form-control" type="text" id="field-referral" name="Referral" placeholder="If you were referred, please include their name" required></textarea>
 					</div>
 					
 					<div class="form-group short" style="display:none;">
@@ -256,7 +262,7 @@
 						<input type="hidden" name="*honeypot"/>
 						<input type="hidden" name="*subject" value="pprresearch.com enquiry"/>
 						
-						<button type="submit" class="btn btn-outline-primary">Submit</button>
+						<button type="submit" id="button" class="btn btn-outline-primary">Submit</button>
 					</div>
 				</form>
 				
@@ -282,36 +288,39 @@
 		
 			<script type="text/javascript">
 				// Sends the AJAX request for the contact form
-				$(function() {
-					var form = $('#contact-form');
-					var formMessages = $('#form-messages');
-					
-					$(form).submit(function(event) {
-						event.preventDefault();
-						
+					$("#button").click(function(event) {
+						var form = $('#contact-form');
+						var formMessages = $('#form-messages');
 						var formData = $(form).serialize();
-					
-						$.ajax({
-							method: 'POST',
-							url: $(form).attr('action'),
-						//	dataType: 'json',
-							accepts: 'application/json',
-							data: formData,
-							success: function(data) {
-								formMessages.text("Thanks!").show();
-								console.log(data);
-							},
-							error: function(err) {
-								formMessages.text("ERROR!").show();
-								console.log(err);
-								// TO DO - clear the form
-							}
+						
+						if (form[0].checkValidity() === false) {
+							event.stopPropagation();
+							event.preventDefault();
+						}
+						else {
+							form.addClass("was-validated");
+						}
+						
+						// Sends the AJAX request for the contact form.
+						// Always going to respond with 406 because of lack of
+						// CORS header from Enformed.
+						$(form).submit(function(event) {
+							$.ajax({
+								method: 'POST',
+								url: $(form).attr('action'),
+								dataType: 'html',
+								crossDomain: true,
+								accepts: 'application/json',
+								data: formData,
+								success: function(data) {
+									formMessages.text("Thank you for getting in touch!  I’ll respond shortly with how I can help.").show();
+								},
+								error: function(err) {
+									formMessages.text("Thank you for getting in touch!  I’ll respond shortly with how I can help.").show();
+								}
+							});
 						});
 					});
-				});
-			</script>
-	
-			<script type="text/javascript">
 				// TO DO - validation not working
 				$('#\zzzzzzzzzzzzzzzfield-org-summary').keyup(function() {
 					if(this.value.match (/\S+/g).length > 100) {
