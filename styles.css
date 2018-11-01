@@ -6,6 +6,7 @@
 } 
 
 body {
+	background-color: #E5E5E5;
 	font-family: CharisSILRegular;
 }
 
@@ -52,6 +53,10 @@ a, a:hover {
 	text-decoration: none;
 }
 
+.ppr-green {
+    color: #198419;
+}
+
 /* FAQ-specific */
 .faq-q {
 	font-weight: bold;
@@ -61,12 +66,21 @@ a, a:hover {
 	padding-bottom: 10px;
 }
 
-/* Holding page */
+/************************************* 
+************ Holding page ************ 
+**************************************/
 #holding {
 	width: 100%;
 }
-.wrapper {
-	padding: 150px;
+#holding .wrapper {
+	width: 900px;
+	height: 227px;
+	margin: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 
 #holding .inline {
@@ -88,14 +102,104 @@ a, a:hover {
 	float: right;
 	width: 600px;
 }
-
-.ppr-green {
-    color: #198419;
+#holding .left img:hover {
+	-webkit-animation: swing 1s ease;
+			animation: swing 1s ease;
+    -webkit-animation-iteration-count: 3;
+			animation-iteration-count: 3;	
 }
 
-#icons {
+#holding p {
+	font-weight: 500;
+	font-size: x-large;
+	margin-bottom: 0px;
+}
+
+#holding #icons {
 	flex-direction: column;
 	justify-content: space-evenly;
 	display: flex;
-	height: 140px;
+	height: 216px;
+	-webkit-transition: right 3s;
+	transition: right 3s;
 }
+
+#holding #icons i:hover {
+	color: #198419;
+}
+
+.fa-wrench, .fa-paint-roller {
+	right: 100px;
+}
+.fa-hammer, .fa-screwdriver {
+	left: 100px;
+}
+
+
+@-webkit-keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+       transform: translateX(-5px);
+    } 
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
