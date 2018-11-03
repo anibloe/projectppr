@@ -12,9 +12,24 @@
 		<!-- https://stackoverflow.com/questions/23849377/html-5-favicon-support -->
 		
 		<!-- Square payment integration -->
-		<script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script> <!-- TO DO - change this back to https when pushing to web server -->
+		<script type="text/javascript" src="http://js.squareup.com/v2/paymentform"></script> <!-- TO DO - change this back to https when pushing to web server -->
 		<script type="text/javascript" src="./sq/sqpaymentform.js"></script>
 		<link type="text/css" rel="stylesheet" href="./sq/sqpaymentform.css"/>
+		
+		 <script type="text/javascript">
+		  function buildForm() {
+			if (SqPaymentForm.isSupportedBrowser()) {
+			  var paymentDiv = document.getElementById("form-container");
+			  if (paymentDiv.style.display === "none") {
+				  paymentDiv.style.display = "block";
+			  } 
+			  paymentform.build();
+			  paymentform.recalculateSize();
+			} else {
+			  // Show a "Browser is not supported" message to your buyer
+			}
+		  }
+		 </script>
 	</head>
 	
 	<body>
@@ -24,7 +39,7 @@
 		<div id="orderSummary">
 			<button id='show-paymentform' onclick='buildForm()'>Pay with card</button>
 			
-			<div id="form-container">
+			<div id="form-container" style="display:none;">
 
 			  <div id="sq-walletbox">
 				<!-- Placeholder for Apple Pay for Web button -->
@@ -83,21 +98,6 @@
 			</div> <!-- end #form-container -->
 
 		 </div>
-		 
-		 <script type="text/javascript">
-		  function buildForm() {
-			if (SqPaymentForm.isSupportedBrowser()) {
-			  var paymentDiv = document.getElementById("form-container");
-			  if (paymentDiv.style.display === "none") {
-				  paymentDiv.style.display = "block";
-			  } 
-			  paymentform.build();
-			  paymentform.recalculateSize();
-			} else {
-			  // Show a "Browser is not supported" message to your buyer
-			}
-		  }
-		 </script>
 		 <!--end Your payment page declaration-->
 
 	</body>
