@@ -1,3 +1,6 @@
+/************************************************************* 
+* Components ************************************************* 
+**************************************************************/
 @font-face {
    font-family: CharisSILRegular;
    font-weight: normal;
@@ -6,11 +9,10 @@
 } 
 
 body {
-	background-color: #E5E5E5;
+	background-color: $LIGHT_GREY;
 	font-family: CharisSILRegular;
 }
 
-/* Components */
 header {
 	font-weight: bold;
 }
@@ -54,7 +56,7 @@ a, a:hover {
 }
 
 .ppr-green {
-    color: #198419;
+    color: $PPR_GREEN;
 }
 
 /* FAQ-specific */

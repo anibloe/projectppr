@@ -3,66 +3,72 @@
 **************************************************************/
 #holding {
 	width: 100%;
-}
-#holding .wrapper {
-	width: 900px;
-	height: 227px;
-	margin: auto;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0; 
-} 
+    
+    .wrapper {
+	   width: 900px;
+        height: 227px;
+        margin: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0; 
+    } 
+    
+    .inline {
+        display: inline-block;
+        position: relative;
+        float: left;
+    }
+    
+    .left {
+        padding-right: 50px;
+        width: 80%;
+        
+        img {
+            float: right;
+            width: 600px;
+            
+            &:hover {
+                -webkit-animation: swing 1s ease;
+                        animation: swing 1s ease;
+                -webkit-animation-iteration-count: 3;
+                        animation-iteration-count: 3;	
+            }
+        }
+    }
+    
+    .right {
+        border-left: 4px solid $PPR_GREEN;
+        height: 212px;
+        width: 20%;
+        text-align: center;
+    }
+    
+    p {
+        font-weight: 500;
+        font-size: x-large;
+        margin-bottom: 0px;
+    }
+    
+    #icons {
+        flex-direction: column;
+        justify-content: space-evenly;
+        display: flex;
+        height: 216px;
+        -webkit-transition: right 3s;
+        transition: right 3s;
+        
+        i:hover {
+            color: $PPR_GREEN;
+        }
+    }
 
-#holding .inline {
-	display: inline-block;
-	position: relative;
-	float: left;
-}
-#holding .left {
-	padding-right: 50px;
-	width: 80%;
-}
-#holding .right {
-	border-left: 4px solid #198419;
-	height: 212px;
-	width: 20%;
-	text-align: center;
-}
-#holding .left img {
-	float: right;
-	width: 600px;
-}
-#holding .left img:hover {
-	-webkit-animation: swing 1s ease;
-			animation: swing 1s ease;
-    -webkit-animation-iteration-count: 3;
-			animation-iteration-count: 3;	
-}
-
-#holding p {
-	font-weight: 500;
-	font-size: x-large;
-	margin-bottom: 0px;
-}
-
-#holding #icons {
-	flex-direction: column;
-	justify-content: space-evenly;
-	display: flex;
-	height: 216px;
-	-webkit-transition: right 3s;
-	transition: right 3s;
-}
-
-#holding #icons i:hover {
-	color: #198419;
-}
-
-.fa-wrench, .fa-paint-roller {
-	right: 100px;
-}
-.fa-hammer, .fa-screwdriver {
-	left: 100px;
+    .fa-wrench, .fa-paint-roller {
+        right: 100px;
+    }
+    
+    .fa-hammer, .fa-screwdriver {
+        left: 100px;
+    }
 }
