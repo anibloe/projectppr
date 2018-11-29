@@ -1,0 +1,180 @@
+@-webkit-keyframes swing {
+  15% {
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px); }
+  30% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px); }
+  50% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px); }
+  65% {
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px); }
+  80% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+@keyframes swing {
+  15% {
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px); }
+  30% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px); }
+  50% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px); }
+  65% {
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px); }
+  80% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+/************************************************************* 
+* Holding page *********************************************** 
+**************************************************************/
+/* line 4, scss/holding.scss */
+#holding {
+  width: 100%; }
+
+/* line 7, scss/holding.scss */
+#holding .wrapper {
+  width: 900px;
+  height: 227px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
+/* line 18, scss/holding.scss */
+#holding .inline {
+  display: inline-block;
+  position: relative;
+  float: left; }
+
+/* line 23, scss/holding.scss */
+#holding .left {
+  padding-right: 50px;
+  width: 80%; }
+
+/* line 27, scss/holding.scss */
+#holding .right {
+  border-left: 4px solid #198419;
+  height: 212px;
+  width: 20%;
+  text-align: center; }
+
+/* line 33, scss/holding.scss */
+#holding .left img {
+  float: right;
+  width: 600px; }
+
+/* line 37, scss/holding.scss */
+#holding .left img:hover {
+  -webkit-animation: swing 1s ease;
+  animation: swing 1s ease;
+  -webkit-animation-iteration-count: 3;
+  animation-iteration-count: 3; }
+
+/* line 44, scss/holding.scss */
+#holding p {
+  font-weight: 500;
+  font-size: x-large;
+  margin-bottom: 0px; }
+
+/* line 50, scss/holding.scss */
+#holding #icons {
+  flex-direction: column;
+  justify-content: space-evenly;
+  display: flex;
+  height: 216px;
+  -webkit-transition: right 3s;
+  transition: right 3s; }
+
+/* line 59, scss/holding.scss */
+#holding #icons i:hover {
+  color: #198419; }
+
+/* line 63, scss/holding.scss */
+.fa-wrench, .fa-paint-roller {
+  right: 100px; }
+
+/* line 66, scss/holding.scss */
+.fa-hammer, .fa-screwdriver {
+  left: 100px; }
+
+@font-face {
+  font-family: CharisSILRegular;
+  font-weight: normal;
+  font-style: normal;
+  src: url(./CharisSIL-R.ttf); }
+/* line 8, scss/other.scss */
+body {
+  background-color: #E5E5E5;
+  font-family: CharisSILRegular; }
+
+/* Components */
+/* line 14, scss/other.scss */
+header {
+  font-weight: bold; }
+
+/* line 18, scss/other.scss */
+nav {
+  display: inline-block;
+  float: left;
+  width: 15%; }
+
+/* line 24, scss/other.scss */
+nav li {
+  list-style: none; }
+
+/* line 28, scss/other.scss */
+main {
+  display: inline-block;
+  float: left;
+  width: 85%; }
+
+/* line 34, scss/other.scss */
+section {
+  padding-bottom: 100px; }
+
+/* line 38, scss/other.scss */
+footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px; }
+
+/* line 44, scss/other.scss */
+#strapline span {
+  text-decoration: underline; }
+
+/* line 48, scss/other.scss */
+#what-i-offer span {
+  font-style: italic; }
+
+/* line 52, scss/other.scss */
+a, a:hover {
+  text-decoration: none; }
+
+/* line 56, scss/other.scss */
+.ppr-green {
+  color: #198419; }
+
+/* FAQ-specific */
+/* line 61, scss/other.scss */
+.faq-q {
+  font-weight: bold; }
+
+/* line 65, scss/other.scss */
+.faq-a {
+  padding-bottom: 10px; }
+
+/*# sourceMappingURL=styles.css.map */
