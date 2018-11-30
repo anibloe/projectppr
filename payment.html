@@ -4,10 +4,10 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		
-		<title>Pay me</title>
+		<title>Make A Payment</title>
 		
 		<!-- scripts -->
-		<script src="./jquery-3.3.1.min.js"></script>
+		<script src="./bs-js/jquery-3.3.1.min.js"></script>
 		
 		<!-- favicon -->
 		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
@@ -54,68 +54,78 @@
 			</div>
 		</section>
 		
-		<!--Your payment page declaration-->
-		<div id="orderSummary">
-			<div id="form-container">
+        <section id="credit-card">
+            <!--Your payment page declaration-->
+            <div id="orderSummary">
+                <div id="form-container">
 
-			  <div id="sq-walletbox">
-				<!-- Placeholder for Apple Pay for Web button -->
-				<button id="sq-apple-pay"></button>
+                  <div id="sq-walletbox">
+                    <!-- Placeholder for Apple Pay for Web button -->
+                    <button id="sq-apple-pay"></button>
 
-				<!-- Placeholder for Masterpass button -->
-				<button id="sq-masterpass"></button>
+                    <!-- Placeholder for Masterpass button -->
+                    <button id="sq-masterpass"></button>
 
-				<!-- Placeholder for Google Pay button-->
-				<button id="sq-google-pay" class="button-google-pay"></button>
+                    <!-- Placeholder for Google Pay button-->
+                    <button id="sq-google-pay" class="button-google-pay"></button>
 
-				<div id="sq-walletbox-divider">
-				  <span id="sq-walletbox-divider-label">Or</span>
-				  <hr />
-				</div>
-			  </div>
+                    <div id="sq-walletbox-divider">
+                      <span id="sq-walletbox-divider-label">Or</span>
+                      <hr />
+                    </div>
+                  </div>
 
-			  <div id="sq-ccbox">
-				<!--
-				  Be sure to replace the action attribute of the form with the path of
-				  the Transaction API charge endpoint URL you want to POST the nonce to
-				  (for example, "/process-card")
-				-->
-				<form id="nonce-form" novalidate action="./payment-processing" method="post">
-				  <fieldset>
-					<span class="label">Card Number</span>
-					<div id="sq-card-number"></div>
+                  <div id="sq-ccbox">
+                    <!--
+                      Be sure to replace the action attribute of the form with the path of
+                      the Transaction API charge endpoint URL you want to POST the nonce to
+                      (for example, "/process-card")
+                    -->
+                    <form id="nonce-form" novalidate action="./payment-processing" method="post">
+                      <fieldset>
+                        <span class="label">Card Number</span>
+                        <div id="sq-card-number"></div>
 
-					<div class="third">
-					  <span class="label">Expiration</span>
-					  <div id="sq-expiration-date"></div>
-					</div>
+                        <div class="third">
+                          <span class="label">Expiration</span>
+                          <div id="sq-expiration-date"></div>
+                        </div>
 
-					<div class="third">
-					  <span class="label">CVV</span>
-					  <div id="sq-cvv"></div>
-					</div>
+                        <div class="third">
+                          <span class="label">CVV</span>
+                          <div id="sq-cvv"></div>
+                        </div>
 
-					<div class="third">
-					  <span class="label">Postal</span>
-					  <div id="sq-postal-code"></div>
-					</div>
-				  </fieldset>
+                        <div class="third">
+                          <span class="label">Postal</span>
+                          <div id="sq-postal-code"></div>
+                        </div>
+                      </fieldset>
 
-				  <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">Pay $1.00</button>
+                      <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">Pay $1.00</button>
 
-				  <div id="error"></div>
+                      <div id="error"></div>
 
-				  <!--
-					After a nonce is generated it will be assigned to this hidden input field.
-				  -->
-				  <input type="hidden" id="card-nonce" name="nonce">
-				</form>
-			  </div> <!-- end #sq-ccbox -->
+                      <!--
+                        After a nonce is generated it will be assigned to this hidden input field.
+                      -->
+                      <input type="hidden" id="card-nonce" name="nonce">
+                    </form>
+                  </div> <!-- end #sq-ccbox -->
 
-			</div> <!-- end #form-container -->
+                </div> <!-- end #form-container -->
 
-		 </div>
-		 <!--end Your payment page declaration-->
+             </div>
+            <!--end Your payment page declaration-->
+        </section>
+        
+        <section id="google-pay">
+        
+        </section>
 
+        <section id="check">
+            <p>Checks are to be made payable to “Philanthropy Policy & Research” and sent to:</p>
+            <p>Philanthropy Policy & Research<br/>PO Box 15512<br/>Boston<br/>MA 02215<br/></p>
+        </section>
 	</body>
 </html>

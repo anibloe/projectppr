@@ -118,69 +118,50 @@ a, a:hover {
 /************************************************************* 
 * Components ************************************************* 
 **************************************************************/
-@font-face {
-  font-family: CharisSILRegular;
-  font-weight: normal;
-  font-style: normal;
-  src: url(../fonts/CharisSIL-R.ttf); }
-/* line 11, scss/components.scss */
+/* line 4, scss/components.scss */
 body {
   background-color: #E5E5E5;
   font-family: CharisSILRegular; }
 
-/* line 16, scss/components.scss */
+/* line 9, scss/components.scss */
 header {
   font-weight: bold; }
 
-/* line 20, scss/components.scss */
+/* line 13, scss/components.scss */
 nav {
   display: inline-block;
   float: left;
   width: 15%; }
+  /* line 18, scss/components.scss */
+  nav li {
+    list-style: none; }
 
-/* line 26, scss/components.scss */
-nav li {
-  list-style: none; }
-
-/* line 30, scss/components.scss */
+/* line 23, scss/components.scss */
 main {
   display: inline-block;
   float: left;
   width: 85%; }
 
-/* line 36, scss/components.scss */
+/* line 29, scss/components.scss */
 section {
   padding-bottom: 100px; }
+  /* line 32, scss/components.scss */
+  section #strapline span {
+    text-decoration: underline; }
+  /* line 36, scss/components.scss */
+  section #what-i-offer span {
+    font-style: italic; }
+  /* line 41, scss/components.scss */
+  section #faq .faq-q {
+    font-weight: bold; }
+  /* line 45, scss/components.scss */
+  section #faq .faq-a {
+    padding-bottom: 10px; }
 
-/* line 40, scss/components.scss */
+/* line 51, scss/components.scss */
 footer {
   position: absolute;
   bottom: 0px;
   left: 0px; }
-
-/* line 46, scss/components.scss */
-#strapline span {
-  text-decoration: underline; }
-
-/* line 50, scss/components.scss */
-#what-i-offer span {
-  font-style: italic; }
-
-/* line 54, scss/components.scss */
-a, a:hover {
-  text-decoration: none; }
-
-/* line 58, scss/components.scss */
-.ppr-green {
-  color: #198419; }
-
-/* FAQ-specific */
-/* line 63, scss/components.scss */
-.faq-q {
-  font-weight: bold; }
-
-/* line 67, scss/components.scss */
-.faq-a {
-  padding-bottom: 10px; }
 
 /*# sourceMappingURL=styles.css.map */

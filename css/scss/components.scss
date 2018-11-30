@@ -1,13 +1,6 @@
 /************************************************************* 
 * Components ************************************************* 
 **************************************************************/
-@font-face {
-   font-family: CharisSILRegular;
-   font-weight: normal;
-   font-style: normal;
-   src: url(../fonts/CharisSIL-R.ttf);
-} 
-
 body {
 	background-color: $LIGHT_GREY;
 	font-family: CharisSILRegular;
@@ -21,10 +14,10 @@ nav {
 	display: inline-block;
 	float: left;
 	width: 15%;
-}
-
-nav li {
-	list-style: none;
+    
+    li {
+	   list-style: none;
+    }
 }
 
 main {
@@ -35,35 +28,28 @@ main {
 
 section {
 	padding-bottom: 100px;
+    
+    #strapline span {
+        text-decoration: underline;
+    }
+
+    #what-i-offer span {
+        font-style: italic;
+    }
+    
+    #faq {
+        .faq-q {
+            font-weight: bold;
+        }
+
+        .faq-a {
+            padding-bottom: 10px;
+        }
+    }
 }
 
 footer {
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
-}
-
-#strapline span {
-	text-decoration: underline;
-}
-	
-#what-i-offer span {
-	font-style: italic;
-}
-
-a, a:hover {
-	text-decoration: none;
-}
-
-.ppr-green {
-    color: $PPR_GREEN;
-}
-
-/* FAQ-specific */
-.faq-q {
-	font-weight: bold;
-}
-
-.faq-a {
-	padding-bottom: 10px;
 }
