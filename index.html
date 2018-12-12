@@ -304,7 +304,7 @@
 				</div>
 			</section>
             
-            <div id="back-to-top">
+            <div id="back-to-top" style="display:none;">
                 <a href="#top">
                     <i class="fas fa-5x fa-arrow-circle-up"></i>
                 </a>
@@ -408,6 +408,14 @@
                     //	this.next().removeClass("alert-danger");
                     }
                 });
+                
+                $(window).scroll(function() {
+                    if ($(window).scrollTop() < 500) {
+                        $("#back-to-top").fadeOut("slow");
+                    }
+                    else
+                        $("#back-to-top").fadeIn("slow");
+                    });
             });
         </script>
 

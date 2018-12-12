@@ -5,24 +5,21 @@
   font-family: CharisSILRegular;
   font-weight: normal;
   font-style: normal;
-  src: url(../fonts/CharisSIL-R.ttf); }
-/* line 11, scss/constants.scss */
+  src: url(./fonts/CharisSIL-R.ttf); }
 a, a:hover {
   text-decoration: none; }
 
-/* line 18, scss/constants.scss */
 nav, main, footer {
   display: block;
   width: 100%; }
 
-/* line 50, scss/constants.scss */
 #back-to-top {
   position: fixed;
   bottom: 40px;
   right: 40px;
   background-color: #E5E5E5;
-  border-radius: 50%; }
-  /* line 57, scss/constants.scss */
+  border-radius: 50%;
+  opacity: 0.6; }
   #back-to-top i {
     color: #198419; }
 
@@ -70,10 +67,8 @@ nav, main, footer {
 /************************************************************* 
 * Holding page *********************************************** 
 **************************************************************/
-/* line 4, scss/holding.scss */
 #holding {
   width: 100%; }
-  /* line 7, scss/holding.scss */
   #holding .wrapper {
     width: 900px;
     height: 227px;
@@ -83,37 +78,30 @@ nav, main, footer {
     right: 0;
     top: 0;
     bottom: 0; }
-  /* line 18, scss/holding.scss */
   #holding .inline {
     display: inline-block;
     position: relative;
     float: left; }
-  /* line 24, scss/holding.scss */
   #holding .left {
     padding-right: 50px;
     width: 80%; }
-    /* line 28, scss/holding.scss */
     #holding .left img {
       float: right;
       width: 600px; }
-      /* line 32, scss/holding.scss */
       #holding .left img:hover {
         -webkit-animation: swing 1s ease;
         animation: swing 1s ease;
         -webkit-animation-iteration-count: 3;
         animation-iteration-count: 3; }
-  /* line 41, scss/holding.scss */
   #holding .right {
     border-left: 4px solid #198419;
     height: 212px;
     width: 20%;
     text-align: center; }
-  /* line 48, scss/holding.scss */
   #holding p {
     font-weight: 500;
     font-size: x-large;
     margin-bottom: 0px; }
-  /* line 54, scss/holding.scss */
   #holding #icons {
     flex-direction: column;
     justify-content: space-evenly;
@@ -121,50 +109,38 @@ nav, main, footer {
     height: 216px;
     -webkit-transition: right 3s;
     transition: right 3s; }
-    /* line 62, scss/holding.scss */
     #holding #icons i:hover {
       color: #198419; }
-  /* line 67, scss/holding.scss */
   #holding .fa-wrench, #holding .fa-paint-roller {
     right: 100px; }
-  /* line 71, scss/holding.scss */
   #holding .fa-hammer, #holding .fa-screwdriver {
     left: 100px; }
 
 /************************************************************* 
 * Components ************************************************* 
 **************************************************************/
-/* line 4, scss/components.scss */
 body {
   background-color: #E5E5E5;
   font-family: CharisSILRegular; }
 
-/* line 9, scss/components.scss */
 header {
   font-weight: bold; }
 
-/* line 16, scss/components.scss */
 nav li {
   list-style: none;
   display: inline; }
 
-/* line 26, scss/components.scss */
 section {
   padding-bottom: 100px; }
-  /* line 29, scss/components.scss */
   section #strapline span {
     text-decoration: underline; }
-  /* line 33, scss/components.scss */
   section #what-i-offer span {
     font-style: italic; }
-  /* line 38, scss/components.scss */
   section #faq .faq-q {
     font-weight: bold; }
-  /* line 42, scss/components.scss */
   section #faq .faq-a {
     padding-bottom: 10px; }
 
-/* line 54, scss/components.scss */
 body {
   display: -webkit-box;
   display: -moz-box;
@@ -172,12 +148,10 @@ body {
   display: -webkit-flex;
   display: flex;
   flex-flow: row wrap; }
-  /* line 58, scss/components.scss */
   body > * {
     flex: 1 100%; }
 
 @media all and (min-width: 600px) {
-  /* line 64, scss/components.scss */
   section {
     -webkit-box-flex: 1 auto;
     -moz-box-flex: 1 auto;
@@ -190,23 +164,18 @@ body {
     -webkit-order: 2;
     order: 2; } }
 @media all and (min-width: 800px) {
-  /* line 71, scss/components.scss */
   #strapline {
     flex: 2 0px; }
 
-  /* line 72, scss/components.scss */
   section {
     order: 1; }
 
-  /* line 73, scss/components.scss */
   .main {
     order: 2; }
 
-  /* line 74, scss/components.scss */
   section {
     order: 3; }
 
-  /* line 75, scss/components.scss */
   footer {
     order: 4; } }
 
