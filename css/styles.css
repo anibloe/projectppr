@@ -6,13 +6,17 @@
   font-weight: normal;
   font-style: normal;
   src: url(./fonts/CharisSIL-R.ttf); }
+/* line 11, scss/constants.scss */
 a, a:hover {
-  text-decoration: none; }
+  text-decoration: none;
+  color: black; }
 
+/* line 21, scss/constants.scss */
 nav, main, footer {
   display: block;
   width: 100%; }
 
+/* line 26, scss/constants.scss */
 #back-to-top {
   position: fixed;
   bottom: 40px;
@@ -20,6 +24,7 @@ nav, main, footer {
   background-color: #E5E5E5;
   border-radius: 50%;
   opacity: 0.6; }
+  /* line 34, scss/constants.scss */
   #back-to-top i {
     color: #198419; }
 
@@ -67,8 +72,10 @@ nav, main, footer {
 /************************************************************* 
 * Holding page *********************************************** 
 **************************************************************/
+/* line 4, scss/holding.scss */
 #holding {
   width: 100%; }
+  /* line 7, scss/holding.scss */
   #holding .wrapper {
     width: 900px;
     height: 227px;
@@ -78,30 +85,37 @@ nav, main, footer {
     right: 0;
     top: 0;
     bottom: 0; }
+  /* line 18, scss/holding.scss */
   #holding .inline {
     display: inline-block;
     position: relative;
     float: left; }
+  /* line 24, scss/holding.scss */
   #holding .left {
     padding-right: 50px;
     width: 80%; }
+    /* line 28, scss/holding.scss */
     #holding .left img {
       float: right;
       width: 600px; }
+      /* line 32, scss/holding.scss */
       #holding .left img:hover {
         -webkit-animation: swing 1s ease;
         animation: swing 1s ease;
         -webkit-animation-iteration-count: 3;
         animation-iteration-count: 3; }
+  /* line 41, scss/holding.scss */
   #holding .right {
     border-left: 4px solid #198419;
     height: 212px;
     width: 20%;
     text-align: center; }
+  /* line 48, scss/holding.scss */
   #holding p {
     font-weight: 500;
     font-size: x-large;
     margin-bottom: 0px; }
+  /* line 54, scss/holding.scss */
   #holding #icons {
     flex-direction: column;
     justify-content: space-evenly;
@@ -109,74 +123,105 @@ nav, main, footer {
     height: 216px;
     -webkit-transition: right 3s;
     transition: right 3s; }
+    /* line 62, scss/holding.scss */
     #holding #icons i:hover {
       color: #198419; }
+  /* line 67, scss/holding.scss */
   #holding .fa-wrench, #holding .fa-paint-roller {
     right: 100px; }
+  /* line 71, scss/holding.scss */
   #holding .fa-hammer, #holding .fa-screwdriver {
     left: 100px; }
 
 /************************************************************* 
 * Components ************************************************* 
 **************************************************************/
+/* line 4, scss/components.scss */
 body {
   background-color: #E5E5E5;
   font-family: CharisSILRegular; }
 
+/* line 9, scss/components.scss */
 header {
   font-weight: bold; }
 
-nav li {
-  list-style: none;
-  display: inline; }
+/* line 13, scss/components.scss */
+nav {
+  height: 70px; }
+  /* line 17, scss/components.scss */
+  nav div {
+    position: relative;
+    top: calc((70px / 2) - 1em); }
+  /* line 22, scss/components.scss */
+  nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly; }
+  /* line 28, scss/components.scss */
+  nav li {
+    list-style: none;
+    display: inline;
+    margin: auto; }
+    /* line 33, scss/components.scss */
+    nav li a {
+      background-color: #198419;
+      border-radius: 4px;
+      padding: 5px;
+      opacity: 0.7; }
+  /* line 41, scss/components.scss */
+  nav img {
+    width: 50px; }
 
-section {
-  padding-bottom: 100px; }
-  section #strapline span {
-    text-decoration: underline; }
-  section #what-i-offer span {
-    font-style: italic; }
-  section #faq .faq-q {
-    font-weight: bold; }
-  section #faq .faq-a {
-    padding-bottom: 10px; }
-
-body {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+/* line 46, scss/components.scss */
+main {
   display: flex;
-  flex-flow: row wrap; }
-  body > * {
+  flex-flow: row wrap;
+  margin: 0 15px;
+  width: calc(100% - 30px); }
+  /* line 53, scss/components.scss */
+  main > * {
     flex: 1 100%; }
 
-@media all and (min-width: 600px) {
-  section {
-    -webkit-box-flex: 1 auto;
-    -moz-box-flex: 1 auto;
-    -webkit-flex: 1 auto;
-    -ms-flex: 1 auto;
-    flex: 1 auto;
-    -webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    -ms-flex-order: 2;
-    -webkit-order: 2;
-    order: 2; } }
+/* line 59, scss/components.scss */
+section:not(:last-of-type) {
+  padding-bottom: 100px; }
+/* line 64, scss/components.scss */
+section#strapline span {
+  text-decoration: underline; }
+/* line 69, scss/components.scss */
+section#logo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+  /* line 74, scss/components.scss */
+  section#logo img {
+    max-width: 70%;
+    max-height: 70%; }
+/* line 81, scss/components.scss */
+section#what-i-offer span {
+  font-style: italic; }
+/* line 87, scss/components.scss */
+section#faq .faq-q {
+  font-weight: bold; }
+/* line 91, scss/components.scss */
+section#faq .faq-a {
+  padding-bottom: 10px; }
+/* line 96, scss/components.scss */
+section#contact {
+  max-width: 450px; }
+
+/* line 101, scss/components.scss */
+footer {
+  text-align: center; }
+
 @media all and (min-width: 800px) {
-  #strapline {
-    flex: 2 0px; }
+  /* line 108, scss/components.scss */
+  .inline {
+    flex: 1 auto; }
 
-  section {
-    order: 1; }
-
-  .main {
-    order: 2; }
-
-  section {
-    order: 3; }
-
-  footer {
-    order: 4; } }
+  /* line 112, scss/components.scss */
+  main {
+    margin: 0 100px;
+    width: calc(100% - 200px); } }
 
 /*# sourceMappingURL=styles.css.map */
