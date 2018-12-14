@@ -9,7 +9,7 @@
 a, a:hover {
   text-decoration: none; }
 
-nav, main, footer {
+main, footer {
   display: block;
   width: 100%; }
 
@@ -126,6 +126,10 @@ body {
 header {
   font-weight: bold; }
 
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap; }
 nav li {
   list-style: none;
   display: inline; }
@@ -140,43 +144,5 @@ section {
     font-weight: bold; }
   section #faq .faq-a {
     padding-bottom: 10px; }
-
-body {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-flow: row wrap; }
-  body > * {
-    flex: 1 100%; }
-
-@media all and (min-width: 600px) {
-  section {
-    -webkit-box-flex: 1 auto;
-    -moz-box-flex: 1 auto;
-    -webkit-flex: 1 auto;
-    -ms-flex: 1 auto;
-    flex: 1 auto;
-    -webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    -ms-flex-order: 2;
-    -webkit-order: 2;
-    order: 2; } }
-@media all and (min-width: 800px) {
-  #strapline {
-    flex: 2 0px; }
-
-  section {
-    order: 1; }
-
-  .main {
-    order: 2; }
-
-  section {
-    order: 3; }
-
-  footer {
-    order: 4; } }
 
 /*# sourceMappingURL=styles.css.map */
