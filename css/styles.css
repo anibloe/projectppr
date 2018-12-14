@@ -7,9 +7,10 @@
   font-style: normal;
   src: url(./fonts/CharisSIL-R.ttf); }
 a, a:hover {
-  text-decoration: none; }
+  text-decoration: none;
+  color: black; }
 
-main, footer {
+nav, main, footer {
   display: block;
   width: 100%; }
 
@@ -126,23 +127,67 @@ body {
 header {
   font-weight: bold; }
 
-nav ul {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: nowrap; }
-nav li {
-  list-style: none;
-  display: inline; }
+nav {
+  height: 70px; }
+  nav div {
+    position: relative;
+    top: calc((70px / 2) - 1em); }
+  nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly; }
+  nav li {
+    list-style: none;
+    display: inline;
+    margin: auto; }
+    nav li a {
+      background-color: #198419;
+      border-radius: 4px;
+      padding: 5px;
+      opacity: 0.7; }
+  nav img {
+    width: 50px; }
 
-section {
+main {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 15px;
+  width: calc(100% - 30px); }
+  main > * {
+    flex: 1 100%; }
+
+section:not(:last-of-type) {
   padding-bottom: 100px; }
-  section #strapline span {
-    text-decoration: underline; }
-  section #what-i-offer span {
-    font-style: italic; }
-  section #faq .faq-q {
-    font-weight: bold; }
-  section #faq .faq-a {
-    padding-bottom: 10px; }
+section#strapline span {
+  text-decoration: underline; }
+section#logo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+  section#logo img {
+    max-width: 70%;
+    max-height: 70%; }
+section#what-i-offer span {
+  font-style: italic; }
+section#faq .faq-q {
+  font-weight: bold; }
+section#faq .faq-a {
+  padding-bottom: 10px; }
+section#contact {
+  max-width: 450px; }
+
+footer {
+  text-align: center; }
+
+/************************************************************* 
+* Screen size > 800px **************************************** 
+**************************************************************/
+@media all and (min-width: 800px) {
+  .inline {
+    flex: 1 auto; }
+
+  main {
+    margin: 0 100px;
+    width: calc(100% - 200px); } }
 
 /*# sourceMappingURL=styles.css.map */
