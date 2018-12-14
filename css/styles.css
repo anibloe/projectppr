@@ -1,29 +1,11 @@
 /************************************************************* 
-* Constants, mixins, etc ************************************* 
+* Mixins, constants, variables, etc ************************** 
 **************************************************************/
 @font-face {
   font-family: CharisSILRegular;
   font-weight: normal;
   font-style: normal;
   src: url(./fonts/CharisSIL-R.ttf); }
-a, a:hover {
-  text-decoration: none;
-  color: black; }
-
-nav, main, footer {
-  display: block;
-  width: 100%; }
-
-#back-to-top {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  background-color: #E5E5E5;
-  border-radius: 50%;
-  opacity: 0.6; }
-  #back-to-top i {
-    color: #198419; }
-
 /************************************************************* 
 * Animations ************************************************* 
 **************************************************************/
@@ -121,30 +103,48 @@ nav, main, footer {
 * Components ************************************************* 
 **************************************************************/
 body {
-  background-color: #E5E5E5;
+  background-color: #198419;
   font-family: CharisSILRegular; }
 
 header {
   font-weight: bold; }
 
 nav {
-  height: 70px; }
+  min-height: 70px;
+  border-bottom: 3px solid #000;
+  background-color: #fff;
+  margin-bottom: 50px; }
   nav div {
     position: relative;
-    top: calc((70px / 2) - 1em); }
+    display: inline-block; }
+    nav div#logo-small {
+      width: 50px;
+      float: left;
+      top: calc((70px - 50px) / 2);
+      left: calc(70px - 50px); }
+    nav div#navigation {
+      width: calc(100% - 50px);
+      top: calc((70px / 2) - 1em); }
   nav ul {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-evenly; }
+    flex-wrap: wrap;
+    justify-content: flex-end; }
   nav li {
     list-style: none;
-    display: inline;
-    margin: auto; }
+    display: inline; }
     nav li a {
-      background-color: #198419;
+      background-color: #E5E5E5;
+      color: #000;
       border-radius: 4px;
       padding: 5px;
-      opacity: 0.7; }
+      border: 2px solid #000;
+      padding: 7px 10px;
+      margin: 0 3px;
+      font-weight: 600; }
+      nav li a:hover {
+        background-color: #198419;
+        text-decoration: none;
+        color: #fff; }
   nav img {
     width: 50px; }
 
@@ -152,42 +152,109 @@ main {
   display: flex;
   flex-flow: row wrap;
   margin: 0 15px;
-  width: calc(100% - 30px); }
+  width: calc(100% - (2 * 15px)); }
   main > * {
     flex: 1 100%; }
+  main #back-to-top {
+    position: fixed;
+    bottom: calc(10px + 40px);
+    right: 10px;
+    background-color: #198419;
+    border-radius: 50%; }
+    main #back-to-top i {
+      color: #E5E5E5; }
 
-section:not(:last-of-type) {
-  padding-bottom: 100px; }
-section#strapline span {
-  text-decoration: underline; }
-section#logo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; }
-  section#logo img {
-    max-width: 70%;
-    max-height: 70%; }
-section#what-i-offer span {
-  font-style: italic; }
-section#faq .faq-q {
-  font-weight: bold; }
-section#faq .faq-a {
-  padding-bottom: 10px; }
-section#contact {
-  max-width: 450px; }
+section {
+  border: 3px solid #000;
+  border-radius: 10px;
+  background-color: #E5E5E5;
+  padding: 20px;
+  margin-bottom: 50px; }
+  section header {
+    text-align: center;
+    margin-bottom: 30px; }
+  section#logo-strapline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 50px 0; }
+    section#logo-strapline img {
+      max-width: 800px;
+      max-height: 298px;
+      margin-bottom: 50px; }
+    section#logo-strapline p {
+      max-width: 800px;
+      text-align: center; }
+      section#logo-strapline p span {
+        text-decoration: underline;
+        font-weight: 700; }
+  section#testimonials > div {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 500px; }
+    section#testimonials > div#twitter-feed iframe {
+      border: 3px solid #000 !important;
+      border-radius: 10px; }
+    section#testimonials > div#previous-clients {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+      section#testimonials > div#previous-clients .client {
+        text-align: center;
+        height: 50%;
+        width: 100%; }
+        section#testimonials > div#previous-clients .client .quote {
+          font-style: italic; }
+  section#what-i-offer span {
+    font-style: italic; }
+  section#faq .faq-q {
+    font-weight: bold; }
+  section#faq .faq-a {
+    padding-bottom: 10px; }
 
 footer {
-  text-align: center; }
+  text-align: center;
+  border-top: 3px solid #000;
+  background-color: #fff;
+  height: 40px; }
+  footer div {
+    position: relative;
+    top: calc((40px / 2) - 1em); }
+
+a, a:hover {
+  text-decoration: none;
+  color: #198419; }
+
+p {
+  margin-bottom: 0; }
+
+li {
+  list-style-type: none; }
+  li:not(.nav):before {
+    color: #198419;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    font-weight: 900; }
 
 /************************************************************* 
-* Screen size > 800px **************************************** 
+* Screen size >800px only ************************************ 
 **************************************************************/
 @media all and (min-width: 800px) {
+  .wrapper {
+    display: flex;
+    flex-flow: row wrap; }
+    .wrapper > * {
+      flex: 1 100%; }
+
   .inline {
     flex: 1 auto; }
 
   main {
     margin: 0 100px;
-    width: calc(100% - 200px); } }
+    width: calc(100% - (2 * 100px)); } }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,5 +1,5 @@
 /************************************************************* 
-* Constants, mixins, etc ************************************* 
+* Mixins, constants, variables, etc ************************** 
 **************************************************************/
 @font-face {
    font-family: CharisSILRegular;
@@ -8,30 +8,18 @@
    src: url(./fonts/CharisSIL-R.ttf);
 }
 
-a, a:hover {
-	text-decoration: none;
-    color: black;
+%flex-layout {
+    
 }
 
 $LIGHT_GREY: #E5E5E5;
 $PPR_GREEN: #198419;
 
-$nav_height: 70px;
+$height_nav: 70px;
+$height_foot: 40px;
+$width_gutter_main_large: 100px;
+$width_gutter_main: 15px;
+$width_small_logo: 50px;
+$back_to_top_margin: 10px;
 
-%main-comp-layout {
-    display: block;
-    width: 100%;
-}
-    
-#back-to-top {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    background-color: $LIGHT_GREY;
-    border-radius: 50%;
-    opacity: 0.6;
-
-    i {
-        color: $PPR_GREEN;
-    }
-}
+$comp_border: 3px solid #000;

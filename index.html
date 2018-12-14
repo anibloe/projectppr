@@ -23,45 +23,54 @@
 
 <body>
     <nav id="top">
-        <div>
+        <div id="logo-small">
+            <img src="img/logo-small.png" alt="Philanthropy Policy & Research logo"/>
+        </div>
+        <div id="navigation">
             <ul>
-                <li><img src="img/logo-small.png" alt="Philanthropy Policy & Research logo"/></li>
-                <li><a href="#what-i-offer">What I offer</a></li>
-                <li><a href="#what-i-can">What I can do for you</a></li>
-                <li><a href="#why">Why me</a></li>
-                <li><a href="#how-i-work">How I Work</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#faq">FAQs</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="nav"><a href="#what-i-offer">What I offer</a></li>
+                <li class="nav"><a href="#what-i-can">What I can do for you</a></li>
+                <li class="nav"><a href="#why">Why me</a></li>
+                <li class="nav"><a href="#how-i-work">How I Work</a></li>
+                <li class="nav"><a href="#about">About Me</a></li>
+                <li class="nav"><a href="#faq">FAQs</a></li>
+                <li class="nav"><a href="#testimonials">Testimonials</a></li>
+                <li class="nav"><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <section id="logo" class="">
+        <section id="logo-strapline">
             <img src="img/logo-full.png" alt="Philanthropy Policy & Research logo"/>
-        </section>
-        
-        <section id="strapline" class="">
-            <header>Philanthropy Policy & Research</header>
             <p>Providing nonprofits, social enterprises and donors with research services to <span>inform</span> strategy, <span>complement</span> expertise, <span>recommend</span> policy and <span>alleviate</span> risk.</p>
         </section>
 
-        <section id="testimonials" class="inline">
+        <section id="testimonials">
             <header>Previous clients and testimonials</header>
-
-            <img src="img/gmec.jpg" rel="GRAMMY Music Education Coalition"/>
-            <p>""</p>
-            <p>Lee Whitmore - Executive Director, GRAMMY Music Education Coalition</p>
-
-            <img src="img/toast.png" rel="Toast"/>
-            <p>""</p>
-            <p>Jo Ehrenreich - Toast Ale USA</p>
-        </section>
-
-        <section id="twitter-feed" class="inline">
-            <p>Twitter feed here</p>
+            
+            <div id="previous-clients">
+                <div class="client">
+                    <img src="img/gmec.jpg" rel="GRAMMY Music Education Coalition"/>
+                    <p class="quote">"Jamie does lots of stuff."</p>
+                    <p>Lee Whitmore - Executive Director, GRAMMY Music Education Coalition</p>
+                </div>
+                <div class="client">
+                    <img src="img/toast.png" rel="Toast"/>
+                    <p class="quote">"Jamie is amazing at doing stuff."</p>
+                    <p>Jo Ehrenreich - Toast Ale USA</p>
+                </div>
+            </div>
+            
+            <div id="twitter-feed">
+                <a class="twitter-timeline" 
+                   data-link-color="#198419" 
+                   href="https://twitter.com/anibloe/lists/ppr?ref_src=twsrc%5Etfw"
+                   data-height="500"
+                   data-chrome="noheader nofooter noborders transparent">
+                </a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
         </section>
 
         <section id="what-i-offer">
@@ -70,31 +79,31 @@
             <ul>
                 <li>
                     <span>Policy research</span>
-                    <span>Analysis and recommendations to inform future strategies, approaches, promotions or programs.</span>
+                    <p>Analysis and recommendations to inform future strategies, approaches, promotions or programs.</p>
                 </li>
                 <li>
                     <span>Advocacy materials</span>
-                    <span>Drafting persuasive communication materials for members, allies, stakeholders and the public.</span>
+                    <p>Drafting persuasive communication materials for members, allies, stakeholders and the public.</p>
                 </li>
                 <li>
                     <span>Funding sources research</span>
-                    <span>Identification of potential funding opportunities, along with detailed advice on how to maximize the likelihood of receiving grants.</span>
+                    <p>Identification of potential funding opportunities, along with detailed advice on how to maximize the likelihood of receiving grants.</p>
                 </li>
                 <li>
                     <span>Research for donors</span>
-                    <span>For those looking to provide financial support to worthy causes, briefing on appropriate target organizations to consider with detailed rationale.</span>
+                    <p>For those looking to provide financial support to worthy causes, briefing on appropriate target organizations to consider with detailed rationale.</p>
                 </li>
                 <li>
                     <span>Legislative analysis</span>
-                    <span>Evaluation of upcoming state and federal legislation that may affect operations, with mitigation strategies for minimizing disruption.</span>
+                    <p>Evaluation of upcoming state and federal legislation that may affect operations, with mitigation strategies for minimizing disruption.</p>
                 </li>
                 <li>
                     <span>Influence briefing</span>
-                    <span>Advice on how to sway influential figures to your cause using concise assessments of their stance and concerns.</span>
+                    <p>Advice on how to sway influential figures to your cause using concise assessments of their stance and concerns.</p>
                 </li>
                 <li>
                     <span>Information management</span>
-                    <span>Recommendations for effective records management and data protection.</span>
+                    <p>Recommendations for effective records management and data protection.</p>
                 </li>
             </ul>
         </section>
@@ -112,7 +121,7 @@
         </section>
 
         <section id="why">
-            <header>Why me</header>
+            <header>Why me?</header>
 
             <ul>
                 <li>I offer new clients their first project pro bono to demonstrate the value of my services</li>
@@ -158,18 +167,6 @@
             </ol>
         </section>
 
-        <section id="about">
-            <header>About me</header>
-
-            <p>Originally from the UK, I moved from academic history to working for the British government as a policy researcher and legislative affairs expert.  Trained to be deployed at short notice to provide expert analysis on any topic as needed, I provided policy recommendations and justification to senior government officials and Ministers.  I produced high-level briefing on subjects as varied as Brexit, environmental protection legislation, Eurozone economics, diplomatic relations, public sector transparency law, international trade agreements, healthcare systems, renewable energy, anti-corruption measures and the protection of democratic rights.</p>
-
-            <p>When my wife and I moved to the US, I knew I wanted to use my experience to benefit society by helping the nonprofit sector.  During my time as a volunteer I realized that many smaller philanthropic organizations would benefit substantially from some professional research, policy analysis and advice; however, they often lack the in-house skills or financial capacity to divert paid staff or volunteers.</p>
-
-            <p>To that end, I started working freelance to provide affordable research support to worthy causes.</p>
-
-            <a href="http://www.linkedin.com/in/jamie-scott-us" class="fab fa-linkedin"></a>
-        </section>
-
         <section id="faq">
             <header>FAQs</header>
 
@@ -204,8 +201,21 @@
 
             <p class="faq-a">At this time, I am unable to accept work for organizations outside the United States.</p>
         </section>
+        
+        <div class="wrapper">
+            <section id="about" class="inline">
+                <header>About me</header>
 
-        <section id="contact">
+                <p>Originally from the UK, I moved from academic history to working for the British government as a policy researcher and legislative affairs expert.  Trained to be deployed at short notice to provide expert analysis on any topic as needed, I provided policy recommendations and justification to senior government officials and Ministers.  I produced high-level briefing on subjects as varied as Brexit, environmental protection legislation, Eurozone economics, diplomatic relations, public sector transparency law, international trade agreements, healthcare systems, renewable energy, anti-corruption measures and the protection of democratic rights.</p>
+
+                <p>When my wife and I moved to the US, I knew I wanted to use my experience to benefit society by helping the nonprofit sector.  During my time as a volunteer I realized that many smaller philanthropic organizations would benefit substantially from some professional research, policy analysis and advice; however, they often lack the in-house skills or financial capacity to divert paid staff or volunteers.</p>
+
+                <p>To that end, I started working freelance to provide affordable research support to worthy causes.</p>
+
+                <a href="http://www.linkedin.com/in/jamie-scott-us" class="fab fa-linkedin"></a>
+            </section>
+
+            <section id="contact" class="inline">
             <header>Contact Form</header>
 
             <form action="https://www.enformed.io/nhsvnvt7" method="POST" name="contact" id="contact-form" data-toggle="validator" role="form">
@@ -310,6 +320,7 @@
                 <!-- error messages here -->
             </div>
         </section>
+        </div>
 
         <div id="back-to-top" style="display:none;">
             <a href="#top">
@@ -319,7 +330,9 @@
     </main>
 
     <footer>
-        <p>Website by <a href="https://www.linkedin.com/in/anibloe/">Ashley Nibloe <i class="fab fa-linkedin"></i></a></p>
+        <div>
+            <p>Website by <a href="https://www.linkedin.com/in/anibloe/">Ashley Nibloe</a></p>
+        </div>
     </footer>
 
     <script type="text/javascript">
@@ -417,7 +430,7 @@
             });
 
             $(window).scroll(function() {
-                if ($(window).scrollTop() < 500) {
+                if ($(window).scrollTop() < 400) {
                     $("#back-to-top").fadeOut("slow");
                 }
                 else
