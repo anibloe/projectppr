@@ -113,7 +113,9 @@ nav {
   min-height: 70px;
   border-bottom: 3px solid #000;
   background-color: #fff;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  position: sticky;
+  top: 0; }
   nav div {
     position: relative;
     display: inline-block; }
@@ -225,6 +227,12 @@ footer {
 a, a:hover {
   text-decoration: none;
   color: #198419; }
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -70px;
+  visibility: hidden; }
 
 p {
   margin-bottom: 0; }

@@ -15,6 +15,8 @@ nav {
     border-bottom: $comp_border;
     background-color: #fff;
     margin-bottom: 50px;
+    position: sticky;
+    top: 0;
     
     div {
         position: relative;
@@ -193,6 +195,13 @@ footer {
 a, a:hover {
     text-decoration: none;
     color: $PPR_GREEN;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -$height_nav;
+    visibility: hidden;
 }
         
 p {
