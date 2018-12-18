@@ -2,7 +2,7 @@
 * Components ************************************************* 
 **************************************************************/
 body {
-	background-color: $PPR_GREEN;
+	background-color: $PPR_GREEN_RGB;
 	font-family: CharisSILRegular;
 }
 
@@ -12,8 +12,8 @@ header {
 
 nav {
     min-height: $height_nav;
-    border-bottom: $comp_border;
-    background-color: #fff;
+    border-bottom: $border;
+    background-color: $LIGHT_GREY;
     margin-bottom: 50px;
     position: sticky;
     top: 0;
@@ -38,7 +38,9 @@ nav {
     ul {
         display: flex;
         flex-wrap: wrap;
-        justify-content: flex-end;
+        justify-content: space-evenly;
+        width: 60%;
+        float: right;
     }
     
     li {
@@ -46,20 +48,8 @@ nav {
         display: inline;
         
         a {
-            background-color: $LIGHT_GREY;
             color: #000;
-            border-radius: 4px;
-            padding: 5px;
-            border: 2px solid #000;
-            padding: 7px 10px;
-            margin: 0 3px;
             font-weight: 600;
-            
-            &:hover{
-                background-color: $PPR_GREEN;
-                text-decoration: none;
-                color: #fff;
-            }
         }
     }
     
@@ -82,7 +72,7 @@ main {
         position: fixed;
         bottom: calc(#{$back_to_top_margin} + #{$height_foot});
         right: $back_to_top_margin;
-        background-color: $PPR_GREEN;
+        background-color: $PPR_GREEN_HEX;
         border-radius: 50%;
 
         i {
@@ -92,17 +82,46 @@ main {
 }
 
 section {
-    border: $comp_border;
+    border: $border;
     border-radius: 10px;
     background-color: $LIGHT_GREY;
     padding: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
+    
+    /* sticky header offset
+        &::before {
+            display: block;
+            content: " ";
+            margin-top: -$height_nav;
+            height: $height_nav;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    */
+    
+        
+    &.toggleable {
+        cursor: pointer;
+        
+        &::before {
+            @extend %section-caret;
+            content: "\f0d7";
+        }
+
+        &.closed {
+            div.section-content {
+                display: none;
+            }
+        
+            &::before {
+                content: "\f0da";
+            }
+        }
+    }
     
     header {
         text-align: center;
-        margin-bottom: 30px;
     }
-    
     
     &#logo-strapline {
         display: flex;
@@ -111,9 +130,9 @@ section {
         padding: 50px 0;
         
         img {
-            // 2.5x smaller than original file
-            max-width: 800px;
-            max-height: 298px;
+            // 3x smaller than original file - 2002 x 745
+            max-width: 667px;
+            max-height: 248px;
             margin-bottom: 50px;
         }
         
@@ -129,17 +148,16 @@ section {
     }
     
     &#testimonials {
-        & > div {
+        div.section-content > div {
             display: inline-block;
             float: left;
             width: 50%;
             height: 500px;
             
             &#twitter-feed {
-                iframe {
-                    border: $comp_border !important;
-                    border-radius: 10px;
-                }
+                border: $border;
+                border-radius: 10px;
+                overflow-y: scroll;
             }
         
             &#previous-clients {
@@ -182,7 +200,7 @@ section {
 
 footer {
     text-align: center;
-    border-top: $comp_border;
+    border-top: $border;
     background-color: #fff;
     height: $height_foot;
     
@@ -194,14 +212,7 @@ footer {
 
 a, a:hover {
     text-decoration: none;
-    color: $PPR_GREEN;
-}
-
-a.anchor {
-    display: block;
-    position: relative;
-    top: -$height_nav;
-    visibility: hidden;
+    color: $PPR_GREEN_HEX;
 }
         
 p {
@@ -212,7 +223,7 @@ li {
     list-style-type: none;
     
     &:not(.nav):before {
-        color: $PPR_GREEN;
+        color: $PPR_GREEN_HEX;
         content: "\f105";
         font-family: "Font Awesome 5 Free";
         width: 10px;
@@ -236,6 +247,7 @@ li {
     }
     .inline {
         flex: 1 auto;
+        max-width: 50%;
     }
     
     main {

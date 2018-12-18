@@ -6,6 +6,15 @@
   font-weight: normal;
   font-style: normal;
   src: url(./fonts/CharisSIL-R.ttf); }
+section.toggleable::before {
+  color: #198419;
+  font-family: "Font Awesome 5 Free";
+  width: 30px;
+  height: 30px;
+  font-weight: 900;
+  position: relative;
+  float: right; }
+
 /************************************************************* 
 * Animations ************************************************* 
 **************************************************************/
@@ -103,7 +112,7 @@
 * Components ************************************************* 
 **************************************************************/
 body {
-  background-color: #198419;
+  background-color: rgba(25, 132, 25, 0.6);
   font-family: CharisSILRegular; }
 
 header {
@@ -111,8 +120,8 @@ header {
 
 nav {
   min-height: 70px;
-  border-bottom: 3px solid #000;
-  background-color: #fff;
+  border-bottom: 1px solid #000;
+  background-color: #E5E5E5;
   margin-bottom: 50px;
   position: sticky;
   top: 0; }
@@ -130,23 +139,15 @@ nav {
   nav ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end; }
+    justify-content: space-evenly;
+    width: 60%;
+    float: right; }
   nav li {
     list-style: none;
     display: inline; }
     nav li a {
-      background-color: #E5E5E5;
       color: #000;
-      border-radius: 4px;
-      padding: 5px;
-      border: 2px solid #000;
-      padding: 7px 10px;
-      margin: 0 3px;
       font-weight: 600; }
-      nav li a:hover {
-        background-color: #198419;
-        text-decoration: none;
-        color: #fff; }
   nav img {
     width: 50px; }
 
@@ -167,22 +168,39 @@ main {
       color: #E5E5E5; }
 
 section {
-  border: 3px solid #000;
+  border: 1px solid #000;
   border-radius: 10px;
   background-color: #E5E5E5;
   padding: 20px;
-  margin-bottom: 50px; }
+  margin-bottom: 25px;
+  /* sticky header offset
+      &::before {
+          display: block;
+          content: " ";
+          margin-top: -$height_nav;
+          height: $height_nav;
+          visibility: hidden;
+          pointer-events: none;
+      }
+  */ }
+  section.toggleable {
+    cursor: pointer; }
+    section.toggleable::before {
+      content: "\f0d7"; }
+    section.toggleable.closed div.section-content {
+      display: none; }
+    section.toggleable.closed::before {
+      content: "\f0da"; }
   section header {
-    text-align: center;
-    margin-bottom: 30px; }
+    text-align: center; }
   section#logo-strapline {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 50px 0; }
     section#logo-strapline img {
-      max-width: 800px;
-      max-height: 298px;
+      max-width: 667px;
+      max-height: 248px;
       margin-bottom: 50px; }
     section#logo-strapline p {
       max-width: 800px;
@@ -190,23 +208,24 @@ section {
       section#logo-strapline p span {
         text-decoration: underline;
         font-weight: 700; }
-  section#testimonials > div {
+  section#testimonials div.section-content > div {
     display: inline-block;
     float: left;
     width: 50%;
     height: 500px; }
-    section#testimonials > div#twitter-feed iframe {
-      border: 3px solid #000 !important;
-      border-radius: 10px; }
-    section#testimonials > div#previous-clients {
+    section#testimonials div.section-content > div#twitter-feed {
+      border: 1px solid #000;
+      border-radius: 10px;
+      overflow-y: scroll; }
+    section#testimonials div.section-content > div#previous-clients {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between; }
-      section#testimonials > div#previous-clients .client {
+      section#testimonials div.section-content > div#previous-clients .client {
         text-align: center;
         height: 50%;
         width: 100%; }
-        section#testimonials > div#previous-clients .client .quote {
+        section#testimonials div.section-content > div#previous-clients .client .quote {
           font-style: italic; }
   section#what-i-offer span {
     font-style: italic; }
@@ -217,7 +236,7 @@ section {
 
 footer {
   text-align: center;
-  border-top: 3px solid #000;
+  border-top: 1px solid #000;
   background-color: #fff;
   height: 40px; }
   footer div {
@@ -227,12 +246,6 @@ footer {
 a, a:hover {
   text-decoration: none;
   color: #198419; }
-
-a.anchor {
-  display: block;
-  position: relative;
-  top: -70px;
-  visibility: hidden; }
 
 p {
   margin-bottom: 0; }
@@ -259,7 +272,8 @@ li {
       flex: 1 100%; }
 
   .inline {
-    flex: 1 auto; }
+    flex: 1 auto;
+    max-width: 50%; }
 
   main {
     margin: 0 100px;

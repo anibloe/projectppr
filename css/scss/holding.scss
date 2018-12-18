@@ -39,7 +39,7 @@
     }
     
     .right {
-        border-left: 4px solid $PPR_GREEN;
+        border-left: 4px solid $PPR_GREEN_HEX;
         height: 212px;
         width: 20%;
         text-align: center;
@@ -60,7 +60,7 @@
         transition: right 3s;
         
         i:hover {
-            color: $PPR_GREEN;
+            color: $PPR_GREEN_HEX;
         }
     }
 

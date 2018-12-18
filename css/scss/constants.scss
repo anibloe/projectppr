@@ -1,6 +1,20 @@
 /************************************************************* 
 * Mixins, constants, variables, etc ************************** 
 **************************************************************/
+
+$LIGHT_GREY: #E5E5E5;
+$PPR_GREEN_HEX: #198419;
+$PPR_GREEN_RGB: rgba(25,132,25,0.6);
+
+$height_nav: 70px;
+$height_foot: 40px;
+$width_gutter_main_large: 100px;
+$width_gutter_main: 15px;
+$width_small_logo: 50px;
+$back_to_top_margin: 10px;
+
+$border: 1px solid #000;
+
 @font-face {
    font-family: CharisSILRegular;
    font-weight: normal;
@@ -12,14 +26,12 @@
     
 }
 
-$LIGHT_GREY: #E5E5E5;
-$PPR_GREEN: #198419;
-
-$height_nav: 70px;
-$height_foot: 40px;
-$width_gutter_main_large: 100px;
-$width_gutter_main: 15px;
-$width_small_logo: 50px;
-$back_to_top_margin: 10px;
-
-$comp_border: 3px solid #000;
+%section-caret {
+    color: $PPR_GREEN_HEX;
+    font-family: "Font Awesome 5 Free";
+    width: 30px;
+    height: 30px;
+    font-weight: 900;
+    position: relative;
+    float:right;
+}
