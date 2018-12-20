@@ -11,7 +11,7 @@ header {
 }
 
 nav {
-    min-height: $height_nav;
+    height: $height_nav;
     border-bottom: $border;
     background-color: $LIGHT_GREY;
     margin-bottom: 50px;
@@ -21,17 +21,17 @@ nav {
     div {
         position: relative;
         display: inline-block;
+        height: 100%;
         
         &#logo-small {
             width: $width_small_logo;
             float: left;
             top: calc((#{$height_nav} - #{$width_small_logo}) / 2);
-            left: calc(#{$height_nav} - #{$width_small_logo});
+            left: calc(#{$height_nav} - #{$width_small_logo}); 
         }
         
         &#navigation {
             width: calc(100% - #{$width_small_logo});
-            top: calc((#{$height_nav} / 2) - 1em);
         }
     }
     
@@ -39,8 +39,7 @@ nav {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        width: 60%;
-        float: right;
+        height: 100%;
     }
     
     li {
@@ -50,6 +49,9 @@ nav {
         a {
             color: #000;
             font-weight: 600;
+            position: relative;
+            top: calc((#{$height_nav} / 2) - 1em);
+            height: 1em;
         }
     }
     
@@ -124,20 +126,22 @@ section {
     }
     
     &#logo-strapline {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
         padding: 50px 0;
+        
+        & > * {
+            display: inline-block;
+            padding: 0 30px;
+        }
         
         img {
             // 3x smaller than original file - 2002 x 745
-            max-width: 667px;
-            max-height: 248px;
-            margin-bottom: 50px;
+            width: 667px;
+            height: 248px;
+            float: left;
         }
         
         p {
-            max-width: 800px;
+            width: calc(100% - 667px);
             text-align: center;
             
             span {
