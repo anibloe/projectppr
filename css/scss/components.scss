@@ -126,28 +126,19 @@ section {
     }
     
     &#landing {
-        padding: 50px 0;
-        
-        & > * {
-            display: inline-block;
-            padding: 0 30px;
-        }
-        
         img {
             // 3x smaller than original file - 2002 x 745
             width: 667px;
             height: 248px;
             float: left;
         }
-        
         p {
-            width: calc(100% - 667px);
             text-align: center;
-            
-            span {
-                text-decoration: underline;
-                font-weight: 700;
-            }
+            vertical-align: middle;
+        }
+        span {
+            text-decoration: underline;
+            font-weight: 700;
         }
     }
     
@@ -239,6 +230,20 @@ li {
 * Screen size >800px only ************************************ 
 **************************************************************/
 @media all and (min-width: 800px) {
+    .wrapper {
+        display: flex;
+        flex-flow: row wrap;
+
+        &> * {
+            flex: 1 100%;
+        }
+    }
+    
+    .inline {
+        flex: 1 auto;
+        max-width: 50%;
+    }
+    
     main {
         margin: 0 $width_gutter_main_large;
         width: calc(100% - (2 * #{$width_gutter_main_large}));
