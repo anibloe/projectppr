@@ -6,6 +6,7 @@
   font-weight: normal;
   font-style: normal;
   src: url(./fonts/CharisSIL-R.ttf); }
+/* line 29, scss/constants.scss */
 section.toggleable::before {
   color: #198419;
   font-family: "Font Awesome 5 Free";
@@ -59,8 +60,10 @@ section.toggleable::before {
 /************************************************************* 
 * Holding page *********************************************** 
 **************************************************************/
+/* line 4, scss/holding.scss */
 #holding {
   width: 100%; }
+  /* line 7, scss/holding.scss */
   #holding .wrapper {
     width: 900px;
     height: 227px;
@@ -70,30 +73,37 @@ section.toggleable::before {
     right: 0;
     top: 0;
     bottom: 0; }
+  /* line 18, scss/holding.scss */
   #holding .inline {
     display: inline-block;
     position: relative;
     float: left; }
+  /* line 24, scss/holding.scss */
   #holding .left {
     padding-right: 50px;
     width: 80%; }
+    /* line 28, scss/holding.scss */
     #holding .left img {
       float: right;
       width: 600px; }
+      /* line 32, scss/holding.scss */
       #holding .left img:hover {
         -webkit-animation: swing 1s ease;
         animation: swing 1s ease;
         -webkit-animation-iteration-count: 3;
         animation-iteration-count: 3; }
+  /* line 41, scss/holding.scss */
   #holding .right {
     border-left: 4px solid #198419;
     height: 212px;
     width: 20%;
     text-align: center; }
+  /* line 48, scss/holding.scss */
   #holding p {
     font-weight: 500;
     font-size: x-large;
     margin-bottom: 0px; }
+  /* line 54, scss/holding.scss */
   #holding #icons {
     flex-direction: column;
     justify-content: space-evenly;
@@ -101,23 +111,29 @@ section.toggleable::before {
     height: 216px;
     -webkit-transition: right 3s;
     transition: right 3s; }
+    /* line 62, scss/holding.scss */
     #holding #icons i:hover {
       color: #198419; }
+  /* line 67, scss/holding.scss */
   #holding .fa-wrench, #holding .fa-paint-roller {
     right: 100px; }
+  /* line 71, scss/holding.scss */
   #holding .fa-hammer, #holding .fa-screwdriver {
     left: 100px; }
 
 /************************************************************* 
 * Components ************************************************* 
 **************************************************************/
+/* line 4, scss/components.scss */
 body {
   background-color: rgba(25, 132, 25, 0.6);
   font-family: CharisSILRegular; }
 
+/* line 9, scss/components.scss */
 header {
   font-weight: bold; }
 
+/* line 13, scss/components.scss */
 nav {
   height: 70px;
   border-bottom: 1px solid #000;
@@ -125,50 +141,62 @@ nav {
   margin-bottom: 50px;
   position: sticky;
   top: 0; }
+  /* line 21, scss/components.scss */
   nav div {
     position: relative;
     display: inline-block;
     height: 100%; }
+    /* line 26, scss/components.scss */
     nav div#logo-small {
       width: 50px;
       float: left;
       top: calc((70px - 50px) / 2);
       left: calc(70px - 50px); }
+    /* line 33, scss/components.scss */
     nav div#navigation {
       width: calc(100% - 50px); }
+  /* line 38, scss/components.scss */
   nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     height: 100%; }
+  /* line 45, scss/components.scss */
   nav li {
     list-style: none;
     display: inline; }
+    /* line 49, scss/components.scss */
     nav li a {
       color: #000;
       font-weight: 600;
       position: relative;
       top: calc((70px / 2) - 1em);
       height: 1em; }
+  /* line 58, scss/components.scss */
   nav img {
     width: 50px; }
 
+/* line 63, scss/components.scss */
 main {
   display: flex;
   flex-flow: row wrap;
   margin: 0 15px;
   width: calc(100% - (2 * 15px)); }
+  /* line 69, scss/components.scss */
   main > * {
     flex: 1 100%; }
+  /* line 73, scss/components.scss */
   main #back-to-top {
     position: fixed;
     bottom: calc(10px + 40px);
     right: 10px;
     background-color: #198419;
     border-radius: 50%; }
+    /* line 80, scss/components.scss */
     main #back-to-top i {
       color: #E5E5E5; }
 
+/* line 86, scss/components.scss */
 section {
   border: 1px solid #000;
   border-radius: 10px;
@@ -185,75 +213,97 @@ section {
           pointer-events: none;
       }
   */ }
+  /* line 105, scss/components.scss */
   section.toggleable {
     cursor: pointer; }
+    /* line 108, scss/components.scss */
     section.toggleable::before {
       content: "\f0d7"; }
+    /* line 114, scss/components.scss */
     section.toggleable.closed div.section-content {
       display: none; }
+    /* line 118, scss/components.scss */
     section.toggleable.closed::before {
       content: "\f0da"; }
+  /* line 124, scss/components.scss */
   section header {
     text-align: center; }
-  section#logo-strapline {
+  /* line 128, scss/components.scss */
+  section#landing {
     padding: 50px 0; }
-    section#logo-strapline > * {
+    /* line 131, scss/components.scss */
+    section#landing > * {
       display: inline-block;
       padding: 0 30px; }
-    section#logo-strapline img {
+    /* line 136, scss/components.scss */
+    section#landing img {
       width: 667px;
       height: 248px;
       float: left; }
-    section#logo-strapline p {
+    /* line 143, scss/components.scss */
+    section#landing p {
       width: calc(100% - 667px);
       text-align: center; }
-      section#logo-strapline p span {
+      /* line 147, scss/components.scss */
+      section#landing p span {
         text-decoration: underline;
         font-weight: 700; }
-  section#testimonials div.section-content > div {
-    display: inline-block;
-    float: left;
-    width: 50%;
+  /* line 155, scss/components.scss */
+  section#previous-clients div.section-content > div {
+    width: 100%;
     height: 500px; }
-    section#testimonials div.section-content > div#twitter-feed {
-      border: 1px solid #000;
-      border-radius: 10px;
-      overflow-y: scroll; }
-    section#testimonials div.section-content > div#previous-clients {
+    /* line 159, scss/components.scss */
+    section#previous-clients div.section-content > div#clients-wrapper {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between; }
-      section#testimonials div.section-content > div#previous-clients .client {
+      /* line 164, scss/components.scss */
+      section#previous-clients div.section-content > div#clients-wrapper .client {
         text-align: center;
-        height: 50%;
-        width: 100%; }
-        section#testimonials div.section-content > div#previous-clients .client .quote {
+        width: 33%; }
+        /* line 168, scss/components.scss */
+        section#previous-clients div.section-content > div#clients-wrapper .client .quote {
           font-style: italic; }
+    /* line 174, scss/components.scss */
+    section#previous-clients div.section-content > div#twitter-feed {
+      border: 1px solid #000;
+      border-radius: 10px;
+      overflow-y: scroll;
+      height: 500px; }
+  /* line 184, scss/components.scss */
   section#what-i-offer span {
     font-style: italic; }
+  /* line 190, scss/components.scss */
   section#faq .faq-q {
     font-weight: bold; }
+  /* line 194, scss/components.scss */
   section#faq .faq-a {
     padding-bottom: 10px; }
 
+/* line 203, scss/components.scss */
 footer {
   text-align: center;
   border-top: 1px solid #000;
   background-color: #fff;
   height: 40px; }
+  /* line 209, scss/components.scss */
   footer div {
     position: relative;
     top: calc((40px / 2) - 1em); }
 
+/* line 215, scss/components.scss */
 a, a:hover {
   text-decoration: none;
   color: #198419; }
 
+/* line 220, scss/components.scss */
 p {
   margin-bottom: 0; }
 
+/* line 224, scss/components.scss */
 li {
   list-style-type: none; }
+  /* line 227, scss/components.scss */
   li:not(.nav):before {
     color: #198419;
     content: "\f105";
@@ -267,16 +317,7 @@ li {
 * Screen size >800px only ************************************ 
 **************************************************************/
 @media all and (min-width: 800px) {
-  .wrapper {
-    display: flex;
-    flex-flow: row wrap; }
-    .wrapper > * {
-      flex: 1 100%; }
-
-  .inline {
-    flex: 1 auto;
-    max-width: 50%; }
-
+  /* line 242, scss/components.scss */
   main {
     margin: 0 100px;
     width: calc(100% - (2 * 100px)); } }
