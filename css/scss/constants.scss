@@ -27,11 +27,10 @@ $border: 1px solid #000;
 }
 
 %section-caret {
-    color: $PPR_GREEN_HEX;
     font-family: "Font Awesome 5 Free";
     width: 30px;
     height: 30px;
     font-weight: 900;
     position: relative;
-    float:right;
+    float: right;
 }

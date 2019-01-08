@@ -6,10 +6,6 @@ body {
 	font-family: CharisSILRegular;
 }
 
-header {
-	font-weight: bold;
-}
-
 nav {
     height: $height_nav;
     border-bottom: $border;
@@ -17,6 +13,7 @@ nav {
     margin-bottom: 50px;
     position: sticky;
     top: 0;
+    z-index: 1;
     
     div {
         position: relative;
@@ -48,7 +45,7 @@ nav {
         
         a {
             color: #000;
-            font-weight: 600;
+            font-weight: bold;
             position: relative;
             top: calc((#{$height_nav} / 2) - 1em);
             height: 1em;
@@ -85,7 +82,7 @@ main {
 
 section {
     border: $border;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: $LIGHT_GREY;
     padding: 20px;
     margin-bottom: 25px;
@@ -103,16 +100,40 @@ section {
     
         
     &.toggleable {
-        cursor: pointer;
+        position: relative;
         
         &::before {
             @extend %section-caret;
             content: "\f0d7";
         }
+        
+        &:hover {
+            cursor: pointer;
+            
+            .read-more p {
+                color: $PPR_GREEN_HEX;
+            }
+            
+            &::before {
+                color: $PPR_GREEN_HEX;
+            }
+        }
 
         &.closed {
-            div.section-content {
-                display: none;
+            .section-content {
+                max-height: 400px;
+                overflow: hidden;
+            }
+            
+            .read-more {
+                display: block !important;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+                background-image: linear-gradient(to bottom, transparent, $LIGHT_GREY);
+                padding: 100px 0 5px 0;
             }
         
             &::before {
@@ -123,6 +144,9 @@ section {
     
     header {
         text-align: center;
+        font-weight: bold;
+        padding-bottom: 25px;
+        font-size: x-large;
     }
     
     &#landing {
@@ -132,10 +156,12 @@ section {
             height: 248px;
             float: left;
         }
+        
         p {
             text-align: center;
             vertical-align: middle;
         }
+        
         span {
             text-decoration: underline;
             font-weight: 700;
@@ -143,31 +169,33 @@ section {
     }
     
     &#previous-clients {
-        div.section-content > div {
-            width: 100%;
-            height: 500px;
+        .section-content > div {
+            display: inline-block;
+            float: left;
+        }
         
-            &#clients-wrapper {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                
-                .client {
-                    text-align: center;
-                    width: 33%;
-                    
-                    .quote {
-                        font-style: italic;
-                    }
+        #clients {
+            width: calc(100% - 500px);
+
+            .client {
+                text-align: center;
+
+                img {
+                    height: 100px;
+                }
+
+                .quote {
+                    font-style: italic;
                 }
             }
-            
-            &#twitter-feed {
-                border: $border;
-                border-radius: 10px;
-                overflow-y: scroll;
-                height: 500px;
-            }
+        }
+
+        #twitter-feed {
+            border: $border;
+            border-radius: 5px;
+            overflow-y: scroll;
+            height: 500px;
+            width: 500px;
         }
     }
 
@@ -180,10 +208,13 @@ section {
     &#faq {
         .faq-q {
             font-weight: bold;
+            
+            &:not(:first-of-type) {
+                padding-top: 25px;
+            }
         }
 
         .faq-a {
-            padding-bottom: 10px;
         }
     }
     
@@ -233,15 +264,12 @@ li {
     .wrapper {
         display: flex;
         flex-flow: row wrap;
-
-        &> * {
-            flex: 1 100%;
-        }
-    }
+        justify-content: center;
     
-    .inline {
-        flex: 1 auto;
-        max-width: 50%;
+        .inline {
+            flex: 1 auto;
+            max-width: 50%;
+        }
     }
     
     main {

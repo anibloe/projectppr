@@ -8,7 +8,6 @@
   src: url(./fonts/CharisSIL-R.ttf); }
 /* line 29, scss/constants.scss */
 section.toggleable::before {
-  color: #198419;
   font-family: "Font Awesome 5 Free";
   width: 30px;
   height: 30px;
@@ -130,76 +129,73 @@ body {
   font-family: CharisSILRegular; }
 
 /* line 9, scss/components.scss */
-header {
-  font-weight: bold; }
-
-/* line 13, scss/components.scss */
 nav {
   height: 70px;
   border-bottom: 1px solid #000;
   background-color: #E5E5E5;
   margin-bottom: 50px;
   position: sticky;
-  top: 0; }
-  /* line 21, scss/components.scss */
+  top: 0;
+  z-index: 1; }
+  /* line 18, scss/components.scss */
   nav div {
     position: relative;
     display: inline-block;
     height: 100%; }
-    /* line 26, scss/components.scss */
+    /* line 23, scss/components.scss */
     nav div#logo-small {
       width: 50px;
       float: left;
       top: calc((70px - 50px) / 2);
       left: calc(70px - 50px); }
-    /* line 33, scss/components.scss */
+    /* line 30, scss/components.scss */
     nav div#navigation {
       width: calc(100% - 50px); }
-  /* line 38, scss/components.scss */
+  /* line 35, scss/components.scss */
   nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     height: 100%; }
-  /* line 45, scss/components.scss */
+  /* line 42, scss/components.scss */
   nav li {
     list-style: none;
     display: inline; }
-    /* line 49, scss/components.scss */
+    /* line 46, scss/components.scss */
     nav li a {
       color: #000;
-      font-weight: 600;
+      font-weight: bold;
       position: relative;
       top: calc((70px / 2) - 1em);
       height: 1em; }
-  /* line 58, scss/components.scss */
+  /* line 55, scss/components.scss */
   nav img {
     width: 50px; }
 
-/* line 63, scss/components.scss */
+/* line 60, scss/components.scss */
 main {
   display: flex;
   flex-flow: row wrap;
   margin: 0 15px;
   width: calc(100% - (2 * 15px)); }
-  /* line 69, scss/components.scss */
+  /* line 66, scss/components.scss */
   main > * {
     flex: 1 100%; }
-  /* line 73, scss/components.scss */
+  /* line 70, scss/components.scss */
   main #back-to-top {
     position: fixed;
     bottom: calc(10px + 40px);
     right: 10px;
     background-color: #198419;
     border-radius: 50%; }
-    /* line 80, scss/components.scss */
+    /* line 77, scss/components.scss */
     main #back-to-top i {
       color: #E5E5E5; }
 
-/* line 86, scss/components.scss */
+/* line 83, scss/components.scss */
 section {
   border: 1px solid #000;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #E5E5E5;
   padding: 20px;
   margin-bottom: 25px;
@@ -213,90 +209,114 @@ section {
           pointer-events: none;
       }
   */ }
-  /* line 105, scss/components.scss */
+  /* line 102, scss/components.scss */
   section.toggleable {
-    cursor: pointer; }
-    /* line 108, scss/components.scss */
+    position: relative; }
+    /* line 105, scss/components.scss */
     section.toggleable::before {
       content: "\f0d7"; }
-    /* line 114, scss/components.scss */
-    section.toggleable.closed div.section-content {
-      display: none; }
-    /* line 118, scss/components.scss */
+    /* line 110, scss/components.scss */
+    section.toggleable:hover {
+      cursor: pointer; }
+      /* line 113, scss/components.scss */
+      section.toggleable:hover .read-more p {
+        color: #198419; }
+      /* line 117, scss/components.scss */
+      section.toggleable:hover::before {
+        color: #198419; }
+    /* line 123, scss/components.scss */
+    section.toggleable.closed .section-content {
+      max-height: 400px;
+      overflow: hidden; }
+    /* line 128, scss/components.scss */
+    section.toggleable.closed .read-more {
+      display: block !important;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background-image: linear-gradient(to bottom, transparent, #E5E5E5);
+      padding: 100px 0 5px 0; }
+    /* line 139, scss/components.scss */
     section.toggleable.closed::before {
       content: "\f0da"; }
-  /* line 124, scss/components.scss */
+  /* line 145, scss/components.scss */
   section header {
-    text-align: center; }
-  /* line 129, scss/components.scss */
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 25px;
+    font-size: x-large; }
+  /* line 153, scss/components.scss */
   section#landing img {
     width: 667px;
     height: 248px;
     float: left; }
-  /* line 135, scss/components.scss */
+  /* line 160, scss/components.scss */
   section#landing p {
     text-align: center;
     vertical-align: middle; }
-  /* line 139, scss/components.scss */
+  /* line 165, scss/components.scss */
   section#landing span {
     text-decoration: underline;
     font-weight: 700; }
-  /* line 146, scss/components.scss */
-  section#previous-clients div.section-content > div {
-    width: 100%;
-    height: 500px; }
-    /* line 150, scss/components.scss */
-    section#previous-clients div.section-content > div#clients-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between; }
-      /* line 155, scss/components.scss */
-      section#previous-clients div.section-content > div#clients-wrapper .client {
-        text-align: center;
-        width: 33%; }
-        /* line 159, scss/components.scss */
-        section#previous-clients div.section-content > div#clients-wrapper .client .quote {
-          font-style: italic; }
-    /* line 165, scss/components.scss */
-    section#previous-clients div.section-content > div#twitter-feed {
-      border: 1px solid #000;
-      border-radius: 10px;
-      overflow-y: scroll;
-      height: 500px; }
-  /* line 175, scss/components.scss */
+  /* line 172, scss/components.scss */
+  section#previous-clients .section-content > div {
+    display: inline-block;
+    float: left; }
+  /* line 177, scss/components.scss */
+  section#previous-clients #clients {
+    width: calc(100% - 500px); }
+    /* line 180, scss/components.scss */
+    section#previous-clients #clients .client {
+      text-align: center; }
+      /* line 183, scss/components.scss */
+      section#previous-clients #clients .client img {
+        height: 100px; }
+      /* line 187, scss/components.scss */
+      section#previous-clients #clients .client .quote {
+        font-style: italic; }
+  /* line 193, scss/components.scss */
+  section#previous-clients #twitter-feed {
+    border: 1px solid #000;
+    border-radius: 5px;
+    overflow-y: scroll;
+    height: 500px;
+    width: 500px; }
+  /* line 203, scss/components.scss */
   section#what-i-offer span {
     font-style: italic; }
-  /* line 181, scss/components.scss */
+  /* line 209, scss/components.scss */
   section#faq .faq-q {
     font-weight: bold; }
-  /* line 185, scss/components.scss */
-  section#faq .faq-a {
-    padding-bottom: 10px; }
+    /* line 212, scss/components.scss */
+    section#faq .faq-q:not(:first-of-type) {
+      padding-top: 25px; }
 
-/* line 194, scss/components.scss */
+/* line 225, scss/components.scss */
 footer {
   text-align: center;
   border-top: 1px solid #000;
   background-color: #fff;
   height: 40px; }
-  /* line 200, scss/components.scss */
+  /* line 231, scss/components.scss */
   footer div {
     position: relative;
     top: calc((40px / 2) - 1em); }
 
-/* line 206, scss/components.scss */
+/* line 237, scss/components.scss */
 a, a:hover {
   text-decoration: none;
   color: #198419; }
 
-/* line 211, scss/components.scss */
+/* line 242, scss/components.scss */
 p {
   margin-bottom: 0; }
 
-/* line 215, scss/components.scss */
+/* line 246, scss/components.scss */
 li {
   list-style-type: none; }
-  /* line 218, scss/components.scss */
+  /* line 249, scss/components.scss */
   li:not(.nav):before {
     color: #198419;
     content: "\f105";
@@ -310,20 +330,17 @@ li {
 * Screen size >800px only ************************************ 
 **************************************************************/
 @media all and (min-width: 800px) {
-  /* line 233, scss/components.scss */
+  /* line 264, scss/components.scss */
   .wrapper {
     display: flex;
-    flex-flow: row wrap; }
-    /* line 237, scss/components.scss */
-    .wrapper > * {
-      flex: 1 100%; }
+    flex-flow: row wrap;
+    justify-content: center; }
+    /* line 269, scss/components.scss */
+    .wrapper .inline {
+      flex: 1 auto;
+      max-width: 50%; }
 
-  /* line 242, scss/components.scss */
-  .inline {
-    flex: 1 auto;
-    max-width: 50%; }
-
-  /* line 247, scss/components.scss */
+  /* line 275, scss/components.scss */
   main {
     margin: 0 100px;
     width: calc(100% - (2 * 100px)); } }

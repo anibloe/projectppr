@@ -22,18 +22,22 @@
 </head>
 
 <body>
-    <nav id="top">
+    <nav>
         <div id="logo-small">
-            <img src="img/logo-small.png" alt="Philanthropy Policy & Research logo"/>
+            <a href="#landing">
+                <div>
+                    <img src="img/logo-small.png" alt="Philanthropy Policy & Research logo"/>
+                </div>
+            </a>
         </div>
         <div id="navigation">
             <ul>
-                <li class="nav"><a class="anchor" href="#what-i-offer">What I offer</a></li>
+                <li class="nav"><a class="anchor" href="#what-i-offer">What I Offer</a></li>
                 <li class="nav"><a class="anchor" href="#how-i-work">How I Work</a></li>
                 <li class="nav"><a class="anchor" href="#previous-clients">Previous Clients</a></li>
                 <li class="nav"><a class="anchor" href="#faq">FAQs</a></li>
                 <li class="nav"><a class="anchor" href="#about">About Me</a></li>
-                <li class="nav"><a class="anchor" href="#contact">Contact</a></li>
+                <li class="nav"><a class="anchor" href="#contact">Contact Form</a></li>
             </ul>
         </div>
     </nav>
@@ -70,7 +74,7 @@
 
         <section id="what-i-offer" class="toggleable closed">
             <div class="section-content">
-                <header>What I offer</header>
+                <header>What I Offer</header>
                 <ul>
                     <li>
                         <span>Policy research and analysis</span>
@@ -127,7 +131,7 @@
                 <ol>
                     You provide a brief overview of your organization and the service(s) you require.
 
-                    Feel free to get in touch with me using the ><a class="anchor" href="#contact">contact form</a>!  The initial outline doesn’t need to be in any great detail, just enough to give an idea of your challenge or what you need.
+                    Feel free to get in touch with me using the <a class="anchor" href="#contact">contact form</a>!  The initial outline doesn’t need to be in any great detail, just enough to give an idea of your challenge or what you need.
 
 
                     We hold scoping conversations to outline the framework, format and scale of the project.
@@ -153,28 +157,32 @@
 
         <section id="previous-clients">
             <div class="section-content">
-                <header>Previous clients</header>
-                <div id="clients-wrapper">
-                    <div class="client">
-                        <a href="https://grammymusiced.org/">
-                            <img src="img/gmec.jpg" rel="GRAMMY Music Education Coalition"/>
-                            <p class="quote">"Jamie does lots of stuff."</p>
-                            <p>Lee Whitmore - Executive Director, GRAMMY Music Education Coalition</p>
-                        </a>
+                <header>Previous Clients</header>
+                <div id="clients">
+                    <div class="wrapper">
+                        <div class="client inline">
+                            <a href="https://grammymusiced.org/">
+                                <img src="img/gmec.png" rel="GRAMMY Music Education Coalition"/>
+                                <p class="quote">"Jamie does lots of stuff."</p>
+                                <p>Lee Whitmore - Executive Director, GRAMMY Music Education Coalition</p>
+                            </a>
+                        </div>
+                        <div class="client inline">
+                            <a href="https://www.toastale.com/us/">
+                                <img src="img/toast.png" rel="Toast"/>
+                                <p class="quote">"Jamie is amazing at doing stuff."</p>
+                                <p>Jo Ehrenreich - Toast Ale USA</p>
+                            </a>
+                        </div>
                     </div>
-                    <div class="client">
-                        <a href="https://www.toastale.com/us/">
-                            <img src="img/toast.png" rel="Toast"/>
-                            <p class="quote">"Jamie is amazing at doing stuff."</p>
-                            <p>Jo Ehrenreich - Toast Ale USA</p>
-                        </a>
-                    </div>
-                    <div class="client">
-                        <a href="https://www.article.one/">
-                            <img src="img/articleone.png" rel="Article One" style="height: 33%;"/>
-                            <p class="quote">"Jamie does stuff amazingly."</p>
-                            <p>Someone - Article One</p>
-                        </a>
+                    <div class="wrapper">
+                        <div class="client">
+                            <a href="https://www.article.one/">
+                                <img src="img/articleone.png" rel="Article One"/>
+                                <p class="quote">"Jamie does stuff amazingly."</p>
+                                <p>Someone - Article One</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div id="twitter-feed">
@@ -190,8 +198,8 @@
         </section>
 
         <section id="faq" class="toggleable closed">
-            <header>FAQs</header>
             <div class="section-content">
+                <header>FAQs</header>
                 <p class="faq-q">What types of organizations do you work with?</p>
                 <p class="faq-a">I will work with any group with a philanthropic or social benefit mission.  This can include (but is not limited to):</p>
                     <ul>
@@ -226,11 +234,14 @@
                 <p class="faq-a">If an organization engages my services and lets me know who suggested PPR, I will ensure that the next project I undertake with that referee includes a 15% discount added  to the proposal.</p>
                 <p class="faq-a">Make sure that if you were referred you let me know who by so they can take advantage of the discount!</p>
             </div>
+            <div class="read-more" style="display:none;">
+                <p>Read More...</p>
+            </div>
         </section>
         
         <section id="about" class="toggleable closed">
             <div class="section-content">
-                <header>About me</header>
+                <header>About Me</header>
                 
                 <img src="img/portrait.png" rel="Jamie Scott's portrait image"/>
                 
@@ -245,8 +256,8 @@
         </section>
 
         <section id="contact" class="toggleable closed">
-                <header>Contact Form</header>
                 <div class="section-content">
+                    <header>Contact Form</header>
                     <form action="https://www.enformed.io/nhsvnvt7" method="POST" name="contact" id="contact-form" data-toggle="validator" role="form">
                         <div class="form-group">
                             <label for="form-chooser">What do you want to get in touch about?</label>
@@ -351,7 +362,7 @@
             </section>
 
         <div id="back-to-top" style="display:none;">
-            <a href="#top">
+            <a href="#landing">
                 <i class="fas fa-5x fa-arrow-circle-up"></i>
             </a>
         </div>
@@ -441,9 +452,9 @@
                 $(this).toggleClass("closed", 1000);
             });
 
-            // Handle the 'back to top' button
+            // Handle the 'back to top' button fade animation
             $(window).scroll(function() {
-                if ($(window).scrollTop() < 400) {
+                if ($(window).scrollTop() < 550) {
                     $("#back-to-top").fadeOut("slow");
                 }
                 else {
