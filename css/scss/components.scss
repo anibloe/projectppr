@@ -16,8 +16,6 @@ nav {
     z-index: 1;
     
     div {
-        position: relative;
-        display: inline-block;
         height: 100%;
         
         &#logo-small {
@@ -67,6 +65,169 @@ main {
         flex: 1 100%;
     }
     
+    section {
+        border: $border;
+        border-radius: 5px;
+        background-color: $LIGHT_GREY;
+        padding: 20px;
+        margin-bottom: 25px;
+
+        /* sticky header offset
+            &::before {
+                display: block;
+                content: " ";
+                margin-top: -$height_nav;
+                height: $height_nav;
+                visibility: hidden;
+                pointer-events: none;
+            }
+        */
+
+        &.toggleable {
+            position: relative;
+
+            &::before {
+                @extend %section-caret;
+                content: "\f0d7";
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                .see-more p {
+                    color: $PPR_GREEN_HEX;
+                }
+
+                &::before {
+                    color: $PPR_GREEN_HEX;
+                }
+            }
+
+            &.closed {
+                .section-content {
+                    max-height: 400px;
+                    overflow: hidden;
+                }
+
+                .see-more {
+                    display: block !important;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    text-align: center;
+                    background-image: linear-gradient(to bottom, transparent, $LIGHT_GREY);
+                    padding: 100px 0 5px 0;
+                    border-radius: 5px;
+                    
+                    p {
+                        margin-bottom: 5px;
+                    }
+                }
+
+                &::before {
+                    content: "\f0da";
+                }
+            }
+        }
+
+        header {
+            text-align: center;
+            font-weight: bold;
+            padding-bottom: 25px;
+            font-size: x-large;
+        }
+        
+        p {
+            margin-bottom: 25px;
+        }
+
+        &#landing {
+            img {
+                // 3x smaller than original file - 2002 x 745
+                width: 667px;
+                height: 248px;
+                float: left;
+            }
+
+            #strapline {
+                text-align: center;
+                vertical-align: middle;
+                font-size: 1.5em;
+            }
+
+            span {
+                text-decoration: underline;
+                font-weight: 700;
+            }
+        }
+
+        &#previous-clients {
+            .section-content > div {
+                float: left;
+            }
+
+            #clients {
+                width: calc(100% - 500px);
+
+                .client {
+                    text-align: center;
+
+                    img {
+                        height: 100px;
+                    }
+
+                    .quote {
+                        font-style: italic;
+                    }
+                }
+            }
+
+            #twitter-feed {
+                border: $border;
+                border-radius: 5px;
+                overflow-y: scroll;
+                height: 500px;
+                width: 500px;
+            }
+        }
+
+        &#what-i-offer {
+            span {
+                font-style: italic;
+            }
+        }
+
+        &#faq {
+            .faq-q {
+                font-weight: bold;
+                margin-bottom: 0;
+
+                &:not(:first-of-type) {
+                    padding-top: 25px;
+                }
+            }
+
+            .faq-a {
+            }
+        }
+
+        &#about {
+            #portrait {
+                width: 20%;
+                float: left;
+            }
+
+            #about-text {
+                width: 80%;
+                padding-left: 25px;
+            }
+        }
+
+        &#contact {
+        }
+    }
+    
     #back-to-top {  
         position: fixed;
         bottom: calc(#{$back_to_top_margin} + #{$height_foot});
@@ -80,147 +241,7 @@ main {
     }
 }
 
-section {
-    border: $border;
-    border-radius: 5px;
-    background-color: $LIGHT_GREY;
-    padding: 20px;
-    margin-bottom: 25px;
-    
-    /* sticky header offset
-        &::before {
-            display: block;
-            content: " ";
-            margin-top: -$height_nav;
-            height: $height_nav;
-            visibility: hidden;
-            pointer-events: none;
-        }
-    */
-    
-        
-    &.toggleable {
-        position: relative;
-        
-        &::before {
-            @extend %section-caret;
-            content: "\f0d7";
-        }
-        
-        &:hover {
-            cursor: pointer;
-            
-            .read-more p {
-                color: $PPR_GREEN_HEX;
-            }
-            
-            &::before {
-                color: $PPR_GREEN_HEX;
-            }
-        }
 
-        &.closed {
-            .section-content {
-                max-height: 400px;
-                overflow: hidden;
-            }
-            
-            .read-more {
-                display: block !important;
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-                background-image: linear-gradient(to bottom, transparent, $LIGHT_GREY);
-                padding: 100px 0 5px 0;
-            }
-        
-            &::before {
-                content: "\f0da";
-            }
-        }
-    }
-    
-    header {
-        text-align: center;
-        font-weight: bold;
-        padding-bottom: 25px;
-        font-size: x-large;
-    }
-    
-    &#landing {
-        img {
-            // 3x smaller than original file - 2002 x 745
-            width: 667px;
-            height: 248px;
-            float: left;
-        }
-        
-        p {
-            text-align: center;
-            vertical-align: middle;
-        }
-        
-        span {
-            text-decoration: underline;
-            font-weight: 700;
-        }
-    }
-    
-    &#previous-clients {
-        .section-content > div {
-            display: inline-block;
-            float: left;
-        }
-        
-        #clients {
-            width: calc(100% - 500px);
-
-            .client {
-                text-align: center;
-
-                img {
-                    height: 100px;
-                }
-
-                .quote {
-                    font-style: italic;
-                }
-            }
-        }
-
-        #twitter-feed {
-            border: $border;
-            border-radius: 5px;
-            overflow-y: scroll;
-            height: 500px;
-            width: 500px;
-        }
-    }
-
-    &#what-i-offer {
-        span {
-            font-style: italic;
-        }
-    }
-    
-    &#faq {
-        .faq-q {
-            font-weight: bold;
-            
-            &:not(:first-of-type) {
-                padding-top: 25px;
-            }
-        }
-
-        .faq-a {
-        }
-    }
-    
-    &#contact {
-    }
-}
 
 footer {
     text-align: center;
@@ -240,7 +261,7 @@ a, a:hover {
 }
         
 p {
-    margin-bottom: 0;
+    margin-bottom: 0px;
 }
         
 li {
@@ -257,11 +278,20 @@ li {
     }
 }
 
+.inline {
+    position: relative;
+    display: inline-block;
+
+    &.left {
+        float: left;
+    }
+}
+
 /************************************************************* 
 * Screen size >800px only ************************************ 
 **************************************************************/
 @media all and (min-width: 800px) {
-    .wrapper {
+    .flex-wrapper {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;

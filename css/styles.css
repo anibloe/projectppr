@@ -6,8 +6,7 @@
   font-weight: normal;
   font-style: normal;
   src: url(./fonts/CharisSIL-R.ttf); }
-/* line 29, scss/constants.scss */
-section.toggleable::before {
+main section.toggleable::before {
   font-family: "Font Awesome 5 Free";
   width: 30px;
   height: 30px;
@@ -59,10 +58,8 @@ section.toggleable::before {
 /************************************************************* 
 * Holding page *********************************************** 
 **************************************************************/
-/* line 4, scss/holding.scss */
 #holding {
   width: 100%; }
-  /* line 7, scss/holding.scss */
   #holding .wrapper {
     width: 900px;
     height: 227px;
@@ -72,37 +69,30 @@ section.toggleable::before {
     right: 0;
     top: 0;
     bottom: 0; }
-  /* line 18, scss/holding.scss */
   #holding .inline {
     display: inline-block;
     position: relative;
     float: left; }
-  /* line 24, scss/holding.scss */
   #holding .left {
     padding-right: 50px;
     width: 80%; }
-    /* line 28, scss/holding.scss */
     #holding .left img {
       float: right;
       width: 600px; }
-      /* line 32, scss/holding.scss */
       #holding .left img:hover {
         -webkit-animation: swing 1s ease;
         animation: swing 1s ease;
         -webkit-animation-iteration-count: 3;
         animation-iteration-count: 3; }
-  /* line 41, scss/holding.scss */
   #holding .right {
     border-left: 4px solid #198419;
     height: 212px;
     width: 20%;
     text-align: center; }
-  /* line 48, scss/holding.scss */
   #holding p {
     font-weight: 500;
     font-size: x-large;
     margin-bottom: 0px; }
-  /* line 54, scss/holding.scss */
   #holding #icons {
     flex-direction: column;
     justify-content: space-evenly;
@@ -110,25 +100,20 @@ section.toggleable::before {
     height: 216px;
     -webkit-transition: right 3s;
     transition: right 3s; }
-    /* line 62, scss/holding.scss */
     #holding #icons i:hover {
       color: #198419; }
-  /* line 67, scss/holding.scss */
   #holding .fa-wrench, #holding .fa-paint-roller {
     right: 100px; }
-  /* line 71, scss/holding.scss */
   #holding .fa-hammer, #holding .fa-screwdriver {
     left: 100px; }
 
 /************************************************************* 
 * Components ************************************************* 
 **************************************************************/
-/* line 4, scss/components.scss */
 body {
   background-color: rgba(25, 132, 25, 0.6);
   font-family: CharisSILRegular; }
 
-/* line 9, scss/components.scss */
 nav {
   height: 70px;
   border-bottom: 1px solid #000;
@@ -137,186 +122,156 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1; }
-  /* line 18, scss/components.scss */
   nav div {
-    position: relative;
-    display: inline-block;
     height: 100%; }
-    /* line 23, scss/components.scss */
     nav div#logo-small {
       width: 50px;
       float: left;
       top: calc((70px - 50px) / 2);
       left: calc(70px - 50px); }
-    /* line 30, scss/components.scss */
     nav div#navigation {
       width: calc(100% - 50px); }
-  /* line 35, scss/components.scss */
   nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     height: 100%; }
-  /* line 42, scss/components.scss */
   nav li {
     list-style: none;
     display: inline; }
-    /* line 46, scss/components.scss */
     nav li a {
       color: #000;
       font-weight: bold;
       position: relative;
       top: calc((70px / 2) - 1em);
       height: 1em; }
-  /* line 55, scss/components.scss */
   nav img {
     width: 50px; }
 
-/* line 60, scss/components.scss */
 main {
   display: flex;
   flex-flow: row wrap;
   margin: 0 15px;
   width: calc(100% - (2 * 15px)); }
-  /* line 66, scss/components.scss */
   main > * {
     flex: 1 100%; }
-  /* line 70, scss/components.scss */
+  main section {
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #E5E5E5;
+    padding: 20px;
+    margin-bottom: 25px;
+    /* sticky header offset
+        &::before {
+            display: block;
+            content: " ";
+            margin-top: -$height_nav;
+            height: $height_nav;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    */ }
+    main section.toggleable {
+      position: relative; }
+      main section.toggleable::before {
+        content: "\f0d7"; }
+      main section.toggleable:hover {
+        cursor: pointer; }
+        main section.toggleable:hover .see-more p {
+          color: #198419; }
+        main section.toggleable:hover::before {
+          color: #198419; }
+      main section.toggleable.closed .section-content {
+        max-height: 400px;
+        overflow: hidden; }
+      main section.toggleable.closed .see-more {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background-image: linear-gradient(to bottom, transparent, #E5E5E5);
+        padding: 100px 0 5px 0;
+        border-radius: 5px; }
+        main section.toggleable.closed .see-more p {
+          margin-bottom: 5px; }
+      main section.toggleable.closed::before {
+        content: "\f0da"; }
+    main section header {
+      text-align: center;
+      font-weight: bold;
+      padding-bottom: 25px;
+      font-size: x-large; }
+    main section p {
+      margin-bottom: 25px; }
+    main section#landing img {
+      width: 667px;
+      height: 248px;
+      float: left; }
+    main section#landing #strapline {
+      text-align: center;
+      vertical-align: middle;
+      font-size: 1.5em; }
+    main section#landing span {
+      text-decoration: underline;
+      font-weight: 700; }
+    main section#previous-clients .section-content > div {
+      float: left; }
+    main section#previous-clients #clients {
+      width: calc(100% - 500px); }
+      main section#previous-clients #clients .client {
+        text-align: center; }
+        main section#previous-clients #clients .client img {
+          height: 100px; }
+        main section#previous-clients #clients .client .quote {
+          font-style: italic; }
+    main section#previous-clients #twitter-feed {
+      border: 1px solid #000;
+      border-radius: 5px;
+      overflow-y: scroll;
+      height: 500px;
+      width: 500px; }
+    main section#what-i-offer span {
+      font-style: italic; }
+    main section#faq .faq-q {
+      font-weight: bold;
+      margin-bottom: 0; }
+      main section#faq .faq-q:not(:first-of-type) {
+        padding-top: 25px; }
+    main section#about #portrait {
+      width: 20%;
+      float: left; }
+    main section#about #about-text {
+      width: 80%;
+      padding-left: 25px; }
   main #back-to-top {
     position: fixed;
     bottom: calc(10px + 40px);
     right: 10px;
     background-color: #198419;
     border-radius: 50%; }
-    /* line 77, scss/components.scss */
     main #back-to-top i {
       color: #E5E5E5; }
 
-/* line 83, scss/components.scss */
-section {
-  border: 1px solid #000;
-  border-radius: 5px;
-  background-color: #E5E5E5;
-  padding: 20px;
-  margin-bottom: 25px;
-  /* sticky header offset
-      &::before {
-          display: block;
-          content: " ";
-          margin-top: -$height_nav;
-          height: $height_nav;
-          visibility: hidden;
-          pointer-events: none;
-      }
-  */ }
-  /* line 102, scss/components.scss */
-  section.toggleable {
-    position: relative; }
-    /* line 105, scss/components.scss */
-    section.toggleable::before {
-      content: "\f0d7"; }
-    /* line 110, scss/components.scss */
-    section.toggleable:hover {
-      cursor: pointer; }
-      /* line 113, scss/components.scss */
-      section.toggleable:hover .read-more p {
-        color: #198419; }
-      /* line 117, scss/components.scss */
-      section.toggleable:hover::before {
-        color: #198419; }
-    /* line 123, scss/components.scss */
-    section.toggleable.closed .section-content {
-      max-height: 400px;
-      overflow: hidden; }
-    /* line 128, scss/components.scss */
-    section.toggleable.closed .read-more {
-      display: block !important;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      background-image: linear-gradient(to bottom, transparent, #E5E5E5);
-      padding: 100px 0 5px 0; }
-    /* line 139, scss/components.scss */
-    section.toggleable.closed::before {
-      content: "\f0da"; }
-  /* line 145, scss/components.scss */
-  section header {
-    text-align: center;
-    font-weight: bold;
-    padding-bottom: 25px;
-    font-size: x-large; }
-  /* line 153, scss/components.scss */
-  section#landing img {
-    width: 667px;
-    height: 248px;
-    float: left; }
-  /* line 160, scss/components.scss */
-  section#landing p {
-    text-align: center;
-    vertical-align: middle; }
-  /* line 165, scss/components.scss */
-  section#landing span {
-    text-decoration: underline;
-    font-weight: 700; }
-  /* line 172, scss/components.scss */
-  section#previous-clients .section-content > div {
-    display: inline-block;
-    float: left; }
-  /* line 177, scss/components.scss */
-  section#previous-clients #clients {
-    width: calc(100% - 500px); }
-    /* line 180, scss/components.scss */
-    section#previous-clients #clients .client {
-      text-align: center; }
-      /* line 183, scss/components.scss */
-      section#previous-clients #clients .client img {
-        height: 100px; }
-      /* line 187, scss/components.scss */
-      section#previous-clients #clients .client .quote {
-        font-style: italic; }
-  /* line 193, scss/components.scss */
-  section#previous-clients #twitter-feed {
-    border: 1px solid #000;
-    border-radius: 5px;
-    overflow-y: scroll;
-    height: 500px;
-    width: 500px; }
-  /* line 203, scss/components.scss */
-  section#what-i-offer span {
-    font-style: italic; }
-  /* line 209, scss/components.scss */
-  section#faq .faq-q {
-    font-weight: bold; }
-    /* line 212, scss/components.scss */
-    section#faq .faq-q:not(:first-of-type) {
-      padding-top: 25px; }
-
-/* line 225, scss/components.scss */
 footer {
   text-align: center;
   border-top: 1px solid #000;
   background-color: #fff;
   height: 40px; }
-  /* line 231, scss/components.scss */
   footer div {
     position: relative;
     top: calc((40px / 2) - 1em); }
 
-/* line 237, scss/components.scss */
 a, a:hover {
   text-decoration: none;
   color: #198419; }
 
-/* line 242, scss/components.scss */
 p {
-  margin-bottom: 0; }
+  margin-bottom: 0px; }
 
-/* line 246, scss/components.scss */
 li {
   list-style-type: none; }
-  /* line 249, scss/components.scss */
   li:not(.nav):before {
     color: #198419;
     content: "\f105";
@@ -326,21 +281,24 @@ li {
     margin-right: 5px;
     font-weight: 900; }
 
+.inline {
+  position: relative;
+  display: inline-block; }
+  .inline.left {
+    float: left; }
+
 /************************************************************* 
 * Screen size >800px only ************************************ 
 **************************************************************/
 @media all and (min-width: 800px) {
-  /* line 264, scss/components.scss */
-  .wrapper {
+  .flex-wrapper {
     display: flex;
     flex-flow: row wrap;
     justify-content: center; }
-    /* line 269, scss/components.scss */
-    .wrapper .inline {
+    .flex-wrapper .inline {
       flex: 1 auto;
       max-width: 50%; }
 
-  /* line 275, scss/components.scss */
   main {
     margin: 0 100px;
     width: calc(100% - (2 * 100px)); } }
